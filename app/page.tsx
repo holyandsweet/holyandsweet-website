@@ -1141,8 +1141,13 @@ export default function HolyAndSweet() {
         <div className="divider"/>
         <p style={{fontFamily:"var(--serif)",fontSize:"1.15rem",fontStyle:"italic",color:"rgba(238,248,249,.6)",maxWidth:560,margin:"0 auto 2.5rem"}}>Spirit-filled Christian music that lifts hearts, stirs devotion, and glorifies God.</p>
         <div className="hero-btns" style={{justifyContent:"center",flexWrap:"wrap"}}>
-          <button className="btn-p">Watch on YouTube</button>
-          <button className="btn-o">Listen on Spotify</button>
+<a href="https://www.youtube.com/@HolyandSweetMedia" target="_blank" rel="noopener noreferrer">
+  <button className="btn-p">Watch on YouTube</button>
+</a>       
+<a href="https://open.spotify.com/artist/7eMreZIp9dUKEhzaaaysGY" target="_blank" rel="noopener noreferrer">
+  <button className="btn-o">Listen on Spotify</button>
+</a>
+
           <button className="btn-o">Apple Music</button>
         </div>
       </div>
@@ -1197,8 +1202,11 @@ export default function HolyAndSweet() {
         <h1 style={{fontFamily:"var(--kids)",fontSize:"clamp(2.5rem,5vw,4rem)",fontWeight:800,color:"white",marginBottom:".5rem"}}>Holy and Sweet Kids</h1>
         <div style={{fontFamily:"var(--serif)",fontSize:"1.4rem",fontStyle:"italic",color:"var(--aqua)",marginBottom:"1.25rem"}}>Train Up A Child</div>
         <p style={{fontSize:"1rem",color:"rgba(255,255,255,.65)",maxWidth:560,margin:"0 auto 2.5rem",lineHeight:1.8}}>Joyful songs, Bible stories, animated original series, and early learning — where little hearts grow in love, faith, and wonder.</p>
-        <div style={{display:"flex",justifyContent:"center",gap:"1rem",flexWrap:"wrap"}}>
-          <button className="btn-kids">▶ Watch on YouTube ✦</button>
+        <div style={{display:"flex",justifyContent:"center",gap:"1rem",flexWrap:"wrap"}}>  
+<a href="https://www.youtube.com/@HolyandSweet" target="_blank" rel="noopener noreferrer">
+  <button className="btn-kids">Watch on YouTube</button>
+</a>
+
           <button className="btn-o">Browse All Videos</button>
         </div>
       </div>
