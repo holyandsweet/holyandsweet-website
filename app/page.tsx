@@ -905,7 +905,7 @@ export default function HolyAndSweet() {
   const [subscribed, setSubscribed] = useState(false);
 
   useEffect(() => { window.scrollTo(0, 0); }, [page]);
-  const nav = (p) => setPage(p);
+  const nav = (p: string) => setPage(p)
 
   const NavBar = () => (
     <nav className="nav">
