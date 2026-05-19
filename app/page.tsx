@@ -1027,7 +1027,9 @@ export default function HolyAndSweet() {
               <h2 className="sec-title lt">Featured Songs</h2>
               <p className="sec-sub lt">Songs of worship, prayer, and encouragement — written from Scripture and lived faith.</p>
             </div>
-            <button className="btn-o" onClick={() => nav("music")}>View All Music</button>
+<a href="/music">
+  <button className="btn-o">View All Music</button>
+</a>
           </div>
           <div className="platform-grid">
             {PLATFORMS.map(p => (
@@ -1058,8 +1060,10 @@ export default function HolyAndSweet() {
               <h2 className="kids-title">Holy and Sweet Kids</h2>
               <div className="kids-tagline">Train Up A Child</div>
               <p className="kids-desc">A joyful, nurturing space where children and parents grow together in love, learning, and faith — Bible stories, animated series, worship songs, and early learning woven with Christian values.</p>
-              <div style={{display:"flex",gap:"1rem",flexWrap:"wrap"}}>
-                <button className="btn-kids" onClick={() => nav("kids")}>Explore Kids Channel ✦</button>
+              <div style={{display:"flex",gap:"1rem",flexWrap:"wrap"}}>     
+<a href="/kids">
+  <button className="btn-kids">Explore Kids Channel</button>
+</a>
                 <button className="btn-o">Watch on YouTube ▶</button>
               </div>
             </div>
