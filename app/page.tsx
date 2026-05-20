@@ -1213,8 +1213,10 @@ export default function HolyAndSweet() {
 <a href="https://www.youtube.com/@HolyandSweet" target="_blank" rel="noopener noreferrer">
   <button className="btn-kids">Watch on YouTube</button>
 </a>
-
-          <button className="btn-o">Browse All Videos</button>
+         
+<a href="/kids">
+  <button className="btn-o">Browse All Videos</button>
+</a>
         </div>
       </div>
       <section className="section kids-sec" style={{padding:"5rem 2rem"}}>
