@@ -904,17 +904,20 @@ export default function HolyAndSweet() {
   const [email, setEmail]     = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
-  useEffect(() => { window.scrollTo(0, 0); }, [page]);
-  const nav = (p: string) => setPage(p);
-
   const NavBar = () => (
     <nav className="nav">
-      <div className="nav-inner">
-        <div className="nav-logo" onClick={() => nav("home")}>Holy <span>&</span> Sweet</div>
+      <div className="nav-inner">     
+<a href="/" className="nav-logo">
+  Holy <span>&</span> Sweet
+</a>
         <div className="nav-links">
-          {[["home","Home"],["music","Music"],["kids","Kids"],["shop","Shop"],["about","About"],["resources","Resources"],["contact","Contact"]].map(([p,l]) => (
-            <button key={p} className={`nav-link${page===p?" active":""}${p==="contact"?" nav-cta":""}`} onClick={() => nav(p)}>{l}</button>
-          ))}
+<a href="/" className="nav-link">Home</a>
+<a href="/music" className="nav-link">Music</a>
+<a href="/kids" className="nav-link">Kids</a>
+<a href="/shop" className="nav-link">Shop</a>
+<a href="/about" className="nav-link">About</a>
+<a href="/resources" className="nav-link">Resources</a>
+<a href="/contact" className="nav-link nav-cta">Contact</a>
         </div>
       </div>
     </nav>
