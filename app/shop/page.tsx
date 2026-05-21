@@ -1,3 +1,8 @@
+"use client";
+import { PRODUCTS_ADULT, PRODUCTS_KIDS } from "@/lib/data";
+import Footer from "@/components/Footer";
+import NavBar from "@/components/NavBar";
+
 export default function ShopPage() {
   return (
     <div className="site">

@@ -839,65 +839,6 @@ const GlobeIcon = () => (
 );
 
 /* ═══════════════════════════════════════════
-   DATA ARRAYS  (icon JSX, not emoji strings)
-═══════════════════════════════════════════ */
-const SONGS = [
-  { icon: <DoveIcon/>,       bg:"#083040", title:"Still Waters",    tag:"Worship",      verse:"Psalm 23:2" },
-  { icon: <PrayHandsIcon/>,  bg:"#061228", title:"My Refuge",       tag:"Prayer",       verse:"Psalm 91:2" },
-  { icon: <SunIcon/>,        bg:"#0A2830", title:"Morning Mercies", tag:"Praise",       verse:"Lamentations 3:23" },
-  { icon: <SailboatIcon/>,   bg:"#082040", title:"Peace, Be Still", tag:"Faith",        verse:"Mark 4:39" },
-  { icon: <LeafBranchIcon/>, bg:"#062C38", title:"Walk in the Light",tag:"Devotion",    verse:"1 John 1:7" },
-  { icon: <LightRaysIcon/>,  bg:"#071830", title:"His Faithfulness",tag:"Thanksgiving", verse:"Psalm 36:5" },
-];
-
-const KIDS_SERIES = [
-  { icon:<TownIcon/>,       name:"Sweetville Friends",    desc:"Kids and animals learn faith, kindness, and teamwork",   episodes:"8 Episodes",  bg:"#082040", color:"#38D4E0" },
-  { icon:<ButterflyIcon/>,  name:"The Fruitful Forest",   desc:"Animal friends explore each Fruit of the Spirit",        episodes:"9 Episodes",  bg:"#062C38", color:"#2CE0C8" },
-  { icon:<BuilderIcon/>,    name:"Bible Builders Club",   desc:"Creativity and building teach biblical principles",       episodes:"5 Episodes",  bg:"#071A30", color:"#5CDCEC" },
-  { icon:<MusicNoteIcon/>,  name:"Tiny Praisers",         desc:"Short worship songs applied to everyday life",           episodes:"5 Episodes",  bg:"#062038", color:"#60C8F0" },
-  { icon:<BooksStackIcon/>, name:"Little Lights Academy", desc:"Early learning woven with Christian values",             episodes:"8 Episodes",  bg:"#082838", color:"#40E0D8" },
-  { icon:<OpenBibleIcon/>,  name:"Bible Story Time",      desc:"Classic Bible stories told with joyful animation",       episodes:"15 Episodes", bg:"#061E30", color:"#38CCDC" },
-];
-
-const PRODUCTS_ADULT = [
-  { icon:<TShirtIcon/>,  bg:"#E4F4F6", name:"Faith & Grace Tee",   tag:"Apparel",    price:"$32" },
-  { icon:<MugIcon/>,     bg:"#D8F2F2", name:"Morning Mercies Mug", tag:"Home",       price:"$22" },
-  { icon:<JournalIcon/>, bg:"#DAEEf8", name:"Scripture Journal",   tag:"Devotional", price:"$28" },
-  { icon:<HoodieIcon/>,  bg:"#D8F0F4", name:"Blessed Hoodie",      tag:"Apparel",    price:"$58" },
-  { icon:<WallArtIcon/>, bg:"#DDF4F4", name:"Psalm 23 Wall Art",   tag:"Home Decor", price:"$45" },
-  { icon:<CalendarIcon/>,bg:"#D8F2F0", name:"Faith Calendar 2025", tag:"Seasonal",   price:"$18" },
-  { icon:<GiftBoxIcon/>, bg:"#E0F4F8", name:"Gift Bundle – Hope",  tag:"Gift Sets",  price:"$75" },
-  { icon:<NotebookIcon/>,bg:"#D8EEF8", name:"Devotional Notebook", tag:"Writing",    price:"$24" },
-];
-
-const PRODUCTS_KIDS = [
-  { icon:<ColoringBookIcon/>,bg:"#DDFAF8", name:"Bible Story Coloring Book",  tag:"Activity",   price:"$16" },
-  { icon:<TShirtIcon/>,      bg:"#D8F4F8", name:"God Made Me Tee",            tag:"Apparel",    price:"$24" },
-  { icon:<StorybookIcon/>,   bg:"#D8F8F4", name:"Sweetville Storybook",       tag:"Books",      price:"$22" },
-  { icon:<FlashcardsIcon/>,  bg:"#D8F8F8", name:"Bible Verse Flashcards",     tag:"Learning",   price:"$14" },
-  { icon:<GiftBoxIcon/>,     bg:"#D8F0F8", name:"Fruits of the Spirit Set",   tag:"Gift Set",   price:"$48" },
-  { icon:<JournalIcon/>,     bg:"#D8F4F4", name:"My Prayer Journal (Kids)",   tag:"Devotional", price:"$18" },
-  { icon:<StickerIcon/>,     bg:"#D8F8F0", name:"Creation Sticker Pack",      tag:"Fun",        price:"$9"  },
-  { icon:<PlushIcon/>,       bg:"#DAF0F8", name:"Sweetville Plush Friend",    tag:"Toys",       price:"$32" },
-];
-
-const VIDEOS_KIDS = [
-  { icon:<SailboatIcon size={58}/>,   bg:"#071830", title:"Noah Obeys God",           series:"Bible Story Time" },
-  { icon:<OpenBibleIcon size={48}/>,  bg:"#062830", title:"Daniel & the Lions",       series:"Bible Story Time" },
-  { icon:<LightRaysIcon size={52}/>,  bg:"#082040", title:"The Brave Little Esther",  series:"Bible Story Time" },
-  { icon:<TownIcon size={50}/>,       bg:"#062038", title:"Forgiving Finley Fox",      series:"Sweetville Friends" },
-  { icon:<ButterflyIcon size={50}/>,  bg:"#062C38", title:"Joy in the Rain",           series:"Fruitful Forest" },
-  { icon:<BuilderIcon size={48}/>,    bg:"#071428", title:"Build on the Rock",         series:"Bible Builders Club" },
-];
-
-const PLATFORMS = [
-  { logo:<YouTubeLogo size={48}/>,      name:"YouTube",       sub:"Watch & Subscribe" },
-  { logo:<SpotifyLogo size={44}/>,      name:"Spotify",       sub:"Stream Now" },
-  { logo:<AppleMusicLogo size={44}/>,   name:"Apple Music",   sub:"Listen on Apple" },
-  { logo:<AmazonMusicLogo size={44}/>,  name:"Amazon Music",  sub:"Stream on Amazon" },
-];
-
-/* ═══════════════════════════════════════════
    MAIN COMPONENT
 ═══════════════════════════════════════════ */
 export default function HolyAndSweet() {
