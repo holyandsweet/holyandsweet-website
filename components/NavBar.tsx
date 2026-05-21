@@ -2,11 +2,10 @@ export default function NavBar() {
   return (
     <nav className="nav">
       <div className="nav-inner">
-        {/* Logo */}
         <a href="/" className="nav-logo">
           Holy <span>&</span> Sweet
         </a>
-        {/* Links */}
+
         <div className="nav-links">
           <a href="/" className="nav-link">Home</a>
           <a href="/music" className="nav-link">Music</a>
@@ -20,3 +19,4 @@ export default function NavBar() {
     </nav>
   );
 }
+
