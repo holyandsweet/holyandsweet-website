@@ -1,7 +1,7 @@
 "use client";
-import Footer from "@/components/Footer":
+import Footer from "@/components/Footer";
 
-import NavBar from "@/components/NavBar":
+import NavBar from "@/components/NavBar";
 
 export default function MusicPage() {
   return (
