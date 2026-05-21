@@ -1,7 +1,6 @@
 export default function KidsPage() {
   return (
     <div className="site">
-      <style>{styles}</style>
       <NavBar />
 
       <div className="pg-hero pg-kids-bg" style={{ textAlign: "center" }}>

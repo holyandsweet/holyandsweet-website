@@ -1,7 +1,6 @@
 export default function ShopPage() {
   return (
     <div className="site">
-      <style>{styles}</style>
       <NavBar />
 
       <div className="pg-hero pg-ice" style={{ textAlign: "center" }}>

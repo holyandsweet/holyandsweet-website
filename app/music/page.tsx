@@ -1,7 +1,6 @@
 export default function MusicPage() {
   return (
     <div className="site">
-      <style>{styles}</style>
       <NavBar />
 
       <div className="pg-hero pg-navy" style={{ textAlign: "center" }}>
