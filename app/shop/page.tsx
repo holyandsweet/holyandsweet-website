@@ -6,8 +6,9 @@ export default function ShopPage() {
 
       <div className="pg-hero pg-ice" style={{ textAlign: "center" }}>
         /
-          <button className="back-btn dk">← Back to Home</button>
-        </a>
+<a href="/">
+  <button className="back-btn dk">← Back to Home</button>
+</a>
 
         <div className="tag-row">
           <div className="tag t">Faith-Centered Goods</div>
