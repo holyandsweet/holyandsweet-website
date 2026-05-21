@@ -1,6 +1,7 @@
 "use client";
+import Footer from "@/components/Footer";
 
-import NavBar from "@/components/NavBar"
+import NavBar from "@/components/NavBar";
 
 import { useState, useEffect } from "react";
 
@@ -904,44 +905,6 @@ export default function HolyAndSweet() {
   const [shopTab, setShopTab] = useState("adult");
   const [email, setEmail]     = useState("");
   const [subscribed, setSubscribed] = useState(false);
-
-  const Footer = () => (
-    <footer className="footer">
-      <div className="footer-inner">
-        <div className="footer-top">
-          <div>
-            <div className="f-logo">Holy <span>&</span> Sweet</div>
-            <div className="f-tag">"Sing and make music in your hearts to the Lord." — Eph. 5:19</div>
-            <div className="f-social">
-              {[<YouTubeLogo size={18}/>,<SpotifyLogo size={18}/>,<AppleMusicLogo size={18}/>,<AmazonMusicLogo size={18}/>].map((icon,i) => (
-                <div key={i} className="soc">{icon}</div>
-              ))}
-            </div>
-          </div>
-          <div>
-            <div className="f-col-title">Explore</div>
-            {[["home","Home"],["music","Adult Music"],["kids","Kids Channel"],["shop","Shop"]].map(([p,l]) => (
-              <button key={p} className="f-link" onClick={() => nav(p)}>{l}</button>
-            ))}
-          </div>
-          <div>
-            <div className="f-col-title">Discover</div>
-            {[["about","About Us"],["resources","Resources"],["contact","Contact"],["contact","Booking"]].map(([p,l],i) => (
-              <button key={i} className="f-link" onClick={() => nav(p)}>{l}</button>
-            ))}
-          </div>
-          <div>
-            <div className="f-col-title">Listen</div>
-            {["YouTube","Spotify","Apple Music","Amazon Music"].map(l => <div key={l} className="f-link">{l}</div>)}
-          </div>
-        </div>
-        <div className="f-bottom">
-          <div className="f-copy">© 2025 Holy and Sweet. Faith-filled media for the whole family.</div>
-          <div className="f-verse">Created to encourage families and glorify God.</div>
-        </div>
-      </div>
-    </footer>
-  );
 
   /* ── HOME ── */
   if (page === "home") return (
