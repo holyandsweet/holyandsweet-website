@@ -1,5 +1,6 @@
-
 "use client";
+
+import NavBar from "@/components/NavBar"
 
 import { useState, useEffect } from "react";
 
@@ -903,25 +904,6 @@ export default function HolyAndSweet() {
   const [shopTab, setShopTab] = useState("adult");
   const [email, setEmail]     = useState("");
   const [subscribed, setSubscribed] = useState(false);
-
-  const NavBar = () => (
-    <nav className="nav">
-      <div className="nav-inner">     
-<a href="/" className="nav-logo">
-  Holy <span>&</span> Sweet
-</a>
-        <div className="nav-links">
-<a href="/" className="nav-link">Home</a>
-<a href="/music" className="nav-link">Music</a>
-<a href="/kids" className="nav-link">Kids</a>
-<a href="/shop" className="nav-link">Shop</a>
-<a href="/about" className="nav-link">About</a>
-<a href="/resources" className="nav-link">Resources</a>
-<a href="/contact" className="nav-link nav-cta">Contact</a>
-        </div>
-      </div>
-    </nav>
-  );
 
   const Footer = () => (
     <footer className="footer">
