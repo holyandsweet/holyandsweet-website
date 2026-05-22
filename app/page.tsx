@@ -1,6 +1,6 @@
 "use client";
 
-import { SONGS, PLATFORMS } from "@/lib/data";
+import { SONGS, PLATFORMS, KIDS_SERIES } from "@/lib/data";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import { useState, useEffect } from "react";
