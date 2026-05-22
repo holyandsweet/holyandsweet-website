@@ -5,16 +5,17 @@ import { PRODUCTS_ADULT, PRODUCTS_KIDS } from "@/lib/data";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 
-export default function ShopPage() {const [shopTab, setShopTab] = useState("adult");
+export default function ShopPage() {
+  const [shopTab, setShopTab] = useState("adult");
+
   return (
     <div className="site">
       <NavBar />
 
-      <div className="pg-hero pg-ice" style={{ textAlign: "center" }}>
-        /
-<a href="/">
-  <button className="back-btn dk">← Back to Home</button>
-</a>
+      <div className="pg-hero pg-ice" style={{ textAlign: "center", paddingTop: "8rem", paddingBottom: "4rem" }}>
+        <a href="/">
+          <button className="back-btn dk">← Back to Home</button>
+        </a>
 
         <div className="tag-row">
           <div className="tag t">Faith-Centered Goods</div>
@@ -52,7 +53,6 @@ export default function ShopPage() {const [shopTab, setShopTab] = useState("adul
             {[
               ["adult", "For Adults"],
               ["kids", "For Kids"],
-              ["bundles", "Gift Bundles"],
             ].map(([t, l]) => (
               <button
                 key={t}
@@ -64,86 +64,57 @@ export default function ShopPage() {const [shopTab, setShopTab] = useState("adul
             ))}
           </div>
 
-          {shopTab === "bundles" ? (
-            <div className="big-grid">
-              {[
-                ["The Hope Bundle", "Journal, mug, and wall art set.", "$75", "For Adults"],
-                ["The Faith Starter Kit", "Devotional notebook, pen set, and calendar.", "$55", "For Adults"],
-                ["The Family Bundle", "Devotional book, kids storybook, coloring book, and mugs.", "$95", "Family"],
-                ["The Little Lights Set", "Coloring book, flashcards, journal, and plush friend.", "$65", "For Kids"],
-              ].map(([n, d, p, t]) => (
-                <div key={n} className="big-card" style={{ textAlign: "center" }}>
-                  <div style={{ marginBottom: "1rem" }}>
-                    <GiftBoxIcon size={56} />
-                  </div>
+          <div className="merch-grid">
+            {(shopTab === "adult" ? PRODUCTS_ADULT : PRODUCTS_KIDS).map((p) => (
+              <div key={p.name} className="prod-card">
+                <div className="prod-img" style={{ background: p.bg }}>
+                  {p.icon}
+                </div>
 
-                  <div style={{ fontSize: ".7rem", textTransform: "uppercase", color: "var(--teal)" }}>
-                    {t}
-                  </div>
+                <div className="prod-info">
+                  <div className="prod-tag">{p.tag}</div>
+                  <div className="prod-name">{p.name}</div>
+                  <div className="prod-price">{p.price}</div>
 
-                  <h3 style={{ fontFamily: "var(--serif)" }}>{n}</h3>
-                  <p style={{ fontSize: ".85rem" }}>{d}</p>
-
-                  <div style={{ fontWeight: 600 }}>{p}</div>
-
-                  <button className="btn-p" style={{ width: "100%" }}>
+                  <button
+                    style={{
+                      marginTop: ".75rem",
+                      width: "100%",
+                      background: "var(--navy)",
+                      color: "var(--ice)",
+                      border: "none",
+                      borderRadius: "8px",
+                      padding: ".6rem",
+                      cursor: "pointer",
+                      fontWeight: 600,
+                      fontFamily: "var(--sans)"
+                    }}
+                  >
                     Add to Cart
                   </button>
                 </div>
-              ))}
+              </div>
+            ))}
+          </div>
+
+          <div
+            style={{
+              marginTop: "4rem",
+              background: "var(--teal-pale)",
+              borderRadius: "20px",
+              padding: "2.5rem",
+              textAlign: "center",
+            }}
+          >
+            <div style={{ fontFamily: "var(--serif)", fontSize: "1.5rem", color: "var(--navy)" }}>
+              Print-on-Demand Quality
             </div>
-          ) : (
-            <>
-              <div className="merch-grid">
-                {(shopTab === "adult" ? PRODUCTS_ADULT : PRODUCTS_KIDS).map((p) => (
-                  <div key={p.name} className="prod-card">
-                    <div className="prod-img" style={{ background: p.bg }}>
-                      {p.icon}
-                    </div>
 
-                    <div className="prod-info">
-                      <div className="prod-tag">{p.tag}</div>
-                      <div className="prod-name">{p.name}</div>
-                      <div className="prod-price">{p.price}</div>
-
-                      <button
-                        style={{
-                          marginTop: ".75rem",
-                          width: "100%",
-                          background: "var(--navy)",
-                          color: "var(--ice)",
-                          border: "none",
-                          borderRadius: "8px",
-                          padding: ".6rem",
-                        }}
-                      >
-                        Add to Cart
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div
-                style={{
-                  marginTop: "3rem",
-                  background: "var(--teal-pale)",
-                  borderRadius: "20px",
-                  padding: "2.5rem",
-                  textAlign: "center",
-                }}
-              >
-                <div style={{ fontFamily: "var(--serif)", fontSize: "1.5rem" }}>
-                  Print-on-Demand Quality
-                </div>
-
-                <p style={{ maxWidth: 520, margin: "1rem auto" }}>
-                  All Holy and Sweet merchandise is produced on demand — premium quality,
-                  fast fulfilment, shipped directly to your door.
-                </p>
-              </div>
-            </>
-          )}
+            <p style={{ maxWidth: 520, margin: "1rem auto", color: "var(--txt-muted)" }}>
+              All Holy and Sweet merchandise is produced on demand — premium quality,
+              fast fulfilment, shipped directly to your door.
+            </p>
+          </div>
         </div>
       </section>
 
