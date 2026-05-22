@@ -1,12 +1,6 @@
-import {
-  TownIcon,
-  SailboatIcon,
-  DoveIcon,
-} from "@/components/icons";
-
 export const KIDS_SERIES = [
   {
-    icon: <TownIcon />,
+    icon: "town",
     name: "Sweetville Friends",
     desc: "Kids and animals learn faith and kindness",
     episodes: "8 Episodes",
@@ -17,7 +11,7 @@ export const KIDS_SERIES = [
 
 export const VIDEOS_KIDS = [
   {
-    icon: <SailboatIcon size={58} />,
+    icon: "sailboat",
     bg: "#071830",
     title: "Noah Obeys God",
     series: "Bible Story Time",
@@ -26,7 +20,7 @@ export const VIDEOS_KIDS = [
 
 export const SONGS = [
   {
-    icon: <DoveIcon />,
+    icon: "dove",
     bg: "#083040",
     title: "Still Waters",
     tag: "Worship",
@@ -36,7 +30,7 @@ export const SONGS = [
 
 export const PRODUCTS_ADULT = [
   {
-    icon: <div />,
+    icon: "product",
     bg: "#E4F4F6",
     name: "Faith Tee",
     tag: "Apparel",
@@ -46,7 +40,7 @@ export const PRODUCTS_ADULT = [
 
 export const PRODUCTS_KIDS = [
   {
-    icon: <div />,
+    icon: "product",
     bg: "#DDFAF8",
     name: "Kids Coloring Book",
     tag: "Activity",
@@ -56,7 +50,7 @@ export const PRODUCTS_KIDS = [
 
 export const PLATFORMS = [
   {
-    logo: <div />,
+    logo: "youtube",
     name: "YouTube",
     sub: "Watch & Subscribe",
   },

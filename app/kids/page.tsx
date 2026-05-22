@@ -1,6 +1,7 @@
 "use client";
+import { TownIcon } from "@/components/icons";
+import { KIDS_SERIES, VIDEOS_KIDS } from "@/lib/data";
 import Footer from "@/components/Footer";
-
 import NavBar from "@/components/NavBar";
 
 export default function KidsPage() {
@@ -78,7 +79,7 @@ export default function KidsPage() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "1.25rem" }}>
             {KIDS_SERIES.map((s) => (
               <div key={s.name} className="series-card" style={{ background: s.bg }}>
-                <div className="series-icon">{s.icon}</div>
+                <div className="series-icon">{s.icon === "town" && <TownIcon />}</div>
 
                 <div
                   style={{
