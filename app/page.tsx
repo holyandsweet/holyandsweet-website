@@ -1,8 +1,8 @@
 "use client";
+
+import { PLATFORMS } from "@/lib/data";
 import Footer from "@/components/Footer";
-
 import NavBar from "@/components/NavBar";
-
 import { useState, useEffect } from "react";
 
 const FONTS = `@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&family=Nunito:wght@400;600;700;800&display=swap');`;
