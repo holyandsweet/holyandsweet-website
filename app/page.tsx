@@ -1,6 +1,6 @@
 "use client";
 
-import { SONGS, PLATFORMS, KIDS_SERIES } from "@/lib/data";
+import { SONGS, PLATFORMS, KIDS_SERIES, PRODUCTS_ADULT, PRODUCTS_KIDS } from "@/lib/data";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import { useState, useEffect } from "react";
@@ -854,35 +854,63 @@ export default function HolyAndSweet() {
       <NavBar/>
 
       {/* Hero */}
-      <section className="hero">
-        <div className="hero-bg"/><div className="hero-dots"/>
-        <div className="hero-content">
-          <div>
-            <div className="hero-eyebrow">Faith-Filled Media for the Whole Family</div>
-            <h1 className="hero-title">Music that lifts the heart<br/><em>toward God.</em></h1>
-            <p className="hero-verse">"Speak to one another with psalms, hymns, and spiritual songs. Sing and make music in your hearts to the Lord."</p>
-            <p className="hero-ref">Ephesians 5:19</p>
-            <div className="hero-btns">
-              <button className="btn-p" onClick={() => nav("music")}>Listen Now</button>
-              <button className="btn-o" onClick={() => nav("kids")}>Holy &amp; Sweet Kids</button>
-            </div>
+<section className="hero">
+  <div className="hero-bg" />
+  <div className="hero-dots" />
+
+  <div className="hero-content">
+    <div>
+      <div className="hero-eyebrow">
+        Faith-Filled Media for the Whole Family
+      </div>
+
+      <h1 className="hero-title">
+        Music that lifts the heart <br />
+        <em>toward God.</em>
+      </h1>
+
+      <p className="hero-verse">
+        "Speak to one another with psalms, hymns, and spiritual songs. Sing and make music in your hearts to the Lord."
+      </p>
+
+      <p className="hero-ref">Ephesians 5:19</p>
+
+      <div className="hero-btns">
+        <a href="/music">
+          <button className="btn-p">Listen Now</button>
+        </a>
+
+        <a href="/kids">
+          <button className="btn-o">Holy & Sweet Kids</button>
+        </a>
+      </div>
+    </div>
+
+    <div className="hero-cards">
+      <a href="/music">
+        <div className="hero-card">
+          <div className="hc-label">Adult Music & Media</div>
+          <div className="hc-title">Holy and Sweet</div>
+          <div className="hc-desc">
+            Spirit-filled Christian music, worship playlists, and devotional media for believers, families, and churches.
           </div>
-          <div className="hero-cards">
-            <div className="hero-card" onClick={() => nav("music")}>
-              <div className="hc-label">Adult Music &amp; Media</div>
-              <div className="hc-title">Holy and Sweet</div>
-              <div className="hc-desc">Spirit-filled Christian music, worship playlists, and devotional media for believers, families, and churches.</div>
-              <span className="hc-arrow">→</span>
-            </div>
-            <div className="hero-card" onClick={() => nav("kids")}>
-              <div className="hc-label">Children's Christian Media</div>
-              <div className="hc-title">Holy and Sweet Kids</div>
-              <div className="hc-desc">Joyful songs, Bible stories, original animated series, and early learning for little hearts growing in faith.</div>
-              <span className="hc-arrow">→</span>
-            </div>
-          </div>
+          <span className="hc-arrow">→</span>
         </div>
-      </section>
+      </a>
+
+      <a href="/kids">
+        <div className="hero-card">
+          <div className="hc-label">Children's Christian Media</div>
+          <div className="hc-title">Holy and Sweet Kids</div>
+          <div className="hc-desc">
+            Joyful songs, Bible stories, original animated series, and early learning for little hearts growing in faith.
+          </div>
+          <span className="hc-arrow">→</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
 
       {/* Mission */}
       <section className="section mission-sec">
