@@ -9,7 +9,15 @@ export default function KidsPage() {
     <div className="site">
       <NavBar />
 
-      <div className="pg-hero pg-kids-bg" style={{ textAlign: "center" }}>
+      {/* HERO */}
+      <div
+        className="pg-hero pg-kids-bg"
+        style={{
+          textAlign: "center",
+          background:
+            "linear-gradient(135deg,#061228 0%,#082040 60%,#0A2848 100%)",
+        }}
+      >
         <a href="/">
           <button className="back-btn">← Back to Home</button>
         </a>
@@ -21,7 +29,7 @@ export default function KidsPage() {
         <h1
           style={{
             fontFamily: "var(--kids)",
-            fontSize: "clamp(2.5rem,5vw,4rem)",
+            fontSize: "clamp(2.6rem,5vw,4rem)",
             fontWeight: 800,
             color: "white",
             marginBottom: ".5rem",
@@ -45,9 +53,9 @@ export default function KidsPage() {
         <p
           style={{
             fontSize: "1rem",
-            color: "rgba(255,255,255,.65)",
+            color: "rgba(255,255,255,0.8)",
             maxWidth: 560,
-            margin: "0 auto 2.5rem",
+            margin: "0 auto 2rem",
             lineHeight: 1.8,
           }}
         >
@@ -55,107 +63,167 @@ export default function KidsPage() {
           where little hearts grow in love, faith, and wonder.
         </p>
 
-        <div style={{ display: "flex", justifyContent: "center", gap: "1rem", flexWrap: "wrap" }}>
-          <a href="https://www.youtube.com/@HolyandSweet" target="_blank" rel="noopener noreferrer">
-            <button className="btn-kids">Watch on YouTube</button>
+        {/* BUTTONS */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "1rem",
+            flexWrap: "wrap",
+          }}
+        >
+          <a href="https://www.youtube.com/@HolyandSweet" target="_blank">
+            <button
+              className="btn-kids"
+              style={{
+                padding: "1rem 2.2rem",
+                fontSize: ".95rem",
+                boxShadow: "0 8px 24px rgba(56,212,224,0.35)",
+              }}
+            >
+              ▶ Watch on YouTube
+            </button>
           </a>
 
           <a href="/kids">
             <button className="btn-o">Browse All Videos</button>
           </a>
         </div>
-        
-<div
-  style={{
-    marginTop: "2rem",
-    display: "flex",
-    justifyContent: "center",
-    gap: "1.5rem",
-    flexWrap: "wrap",
-    opacity: 0.8,
-    fontSize: ".85rem",
-    color: "rgba(255,255,255,0.8)",
-  }}
->
-  <span>🎬 Animated Series</span>
-  <span>📖 Bible Stories</span>
-  <span>🎵 Worship for Kids</span>
-</div>
 
+        {/* TRUST ROW */}
+        <div
+          style={{
+            marginTop: "2rem",
+            display: "flex",
+            justifyContent: "center",
+            gap: "1.5rem",
+            flexWrap: "wrap",
+            fontSize: ".85rem",
+            opacity: 0.85,
+            color: "rgba(255,255,255,0.85)",
+          }}
+        >
+          <span>🎬 Animated Series</span>
+          <span>📖 Bible Stories</span>
+          <span>🎵 Worship for Kids</span>
+        </div>
       </div>
 
-      <section className="section kids-sec" style={{ padding: "5rem 2rem" }}>
+      {/* SERIES */}
+      <section
+        className="section kids-sec"
+        style={{
+          padding: "5rem 2rem",
+          position: "relative",
+        }}
+      >
+        {/* background energy */}
+        <div
+          style={{
+            position: "absolute",
+            top: "-80px",
+            right: "10%",
+            width: 200,
+            height: 200,
+            background: "#38D4E0",
+            borderRadius: "50%",
+            opacity: 0.08,
+          }}
+        />
+
+        <div
+          style={{
+            position: "absolute",
+            bottom: "-60px",
+            left: "5%",
+            width: 160,
+            height: 160,
+            background: "#18B8CC",
+            borderRadius: "50%",
+            opacity: 0.08,
+          }}
+        />
+
         <div className="inner" style={{ position: "relative", zIndex: 1 }}>
           <div className="eyebrow" style={{ color: "var(--aqua)" }}>
             Original Series
           </div>
 
-          <h2 className="sec-title lt" style={{ marginBottom: "2.5rem" }}>
+          <h2 className="sec-title lt" style={{ marginBottom: "2.8rem" }}>
             Stories That Shape Little Hearts
           </h2>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-gap: "1.5rem",
- }}>
-            {KIDS_SERIES.map((s) => ( <div
-  key={s.name}
-  className="series-card"
-  style={{
-    background: s.bg,
-    borderRadius: "20px",
-    padding: "2rem",
-    boxShadow: "0 12px 40px rgba(0,0,0,0.25)",
-    transition: "all 0.3s ease",
-    cursor: "pointer",
-  }}
-onMouseEnter={(e) => {
-    e.currentTarget.style.transform = "translateY(-6px) scale(1.02)";
-  }}
-  onMouseLeave={(e) => {
-    e.currentTarget.style.transform = "translateY(0)";
-  }}
->
- <div
-  className="series-icon"
-  style={{
-    width: 70,
-    height: 70,
-    borderRadius: "18px",
-    background: "rgba(255,255,255,0.1)",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    marginBottom: "1rem",
-  }}
->
-  {s.icon === "town" && <TownIcon />}
-</div>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gap: "1.5rem",
+            }}
+          >
+            {KIDS_SERIES.map((s) => (
+              <div
+                key={s.name}
+                style={{
+                  background: `linear-gradient(135deg, ${s.bg}, rgba(0,0,0,0.45))`,
+                  borderRadius: "20px",
+                  padding: "2rem",
+                  boxShadow: "0 14px 45px rgba(0,0,0,0.3)",
+                  transition: "all 0.3s ease",
+                  cursor: "pointer",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform =
+                    "translateY(-6px) scale(1.02)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                }}
+              >
+                {/* ICON */}
+                <div
+                  style={{
+                    width: 70,
+                    height: 70,
+                    borderRadius: "18px",
+                    background: "rgba(255,255,255,0.12)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: "1rem",
+                  }}
+                >
+                  {s.icon === "town" && <TownIcon />}
+                </div>
 
                 <div
                   style={{
                     fontFamily: "var(--kids)",
-                    fontSize: "1.15rem",
+                    fontSize: "1.2rem",
                     fontWeight: 800,
                     color: s.color,
-                    marginBottom: ".5rem",
+                    marginBottom: ".6rem",
                   }}
                 >
                   {s.name}
                 </div>
 
-                <div style={{ color: "rgba(255,255,255,.7)", fontSize: ".85rem", lineHeight: 1.65 }}>
+                <div
+                  style={{
+                    color: "rgba(255,255,255,0.85)",
+                    fontSize: ".9rem",
+                    lineHeight: 1.6,
+                  }}
+                >
                   {s.desc}
                 </div>
 
                 <div
                   style={{
-                    fontSize: ".72rem",
+                    fontSize: ".7rem",
                     fontWeight: 700,
-                    letterSpacing: ".08em",
-                    textTransform: "uppercase",
-                    marginTop: ".85rem",
+                    marginTop: "1rem",
                     color: s.color,
-                    opacity: 0.7,
+                    opacity: 0.85,
                   }}
                 >
                   {s.episodes}
@@ -166,6 +234,7 @@ onMouseEnter={(e) => {
         </div>
       </section>
 
+      {/* VIDEOS */}
       <section className="section" style={{ background: "var(--navy-dk)" }}>
         <div className="inner">
           <div className="eyebrow" style={{ color: "var(--teal-lt)" }}>
@@ -178,24 +247,29 @@ onMouseEnter={(e) => {
 
           <div className="vid-grid">
             {VIDEOS_KIDS.map((v) => (
-              
-<div
-  key={v.title}
-  className="vid-card"
-  style={{
-    borderRadius: "18px",
-    overflow: "hidden",
-    boxShadow: "0 10px 35px rgba(0,0,0,0.25)",
-    transition: "all 0.25s ease",
-  }}
->
-
+              <div
+                key={v.title}
+                style={{
+                  borderRadius: "18px",
+                  overflow: "hidden",
+                  boxShadow: "0 10px 35px rgba(0,0,0,0.35)",
+                  transition: "all 0.25s ease",
+                  background: "rgba(255,255,255,0.03)",
+                  cursor: "pointer",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-5px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                }}
+              >
                 <div className="vid-thumb" style={{ background: v.bg }}>
                   {v.icon}
                   <div className="play-btn">▶</div>
                 </div>
 
-                <div className="vid-info" style={{ background: "rgba(255,255,255,.04)" }}>
+                <div className="vid-info">
                   <div className="vid-series">{v.series}</div>
                   <div className="vid-title">{v.title}</div>
                 </div>
