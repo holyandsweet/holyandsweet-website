@@ -1,9 +1,4 @@
-import {
-  YouTubeLogo,
-  SpotifyLogo,
-  AppleMusicLogo,
-  AmazonMusicLogo
-} from "@/components/icons";
+// remove icon imports completely for now
 
 export default function Footer() {
   return (
@@ -21,14 +16,11 @@ export default function Footer() {
             </div>
 
             <div className="f-social">
-              {[
-                <YouTubeLogo size={18} />,
-                <SpotifyLogo size={18} />,
-                <AppleMusicLogo size={18} />,
-                <AmazonMusicLogo size={18} />
-              ].map((icon, i) => (
-                <div key={i} className="soc">{icon}</div>
-              ))}
+            
+{["YouTube", "Spotify", "Apple Music", "Amazon Music"].map((label, i) => (
+  <div key={i} className="soc">{label}</div>
+))}
+
             </div>
           </div>
 
