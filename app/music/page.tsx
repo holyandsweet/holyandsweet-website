@@ -242,6 +242,53 @@ export default function MusicPage() {
         </div>
       </section>
 
+      {/* FEATURED VIDEO / WATCH & SUBSCRIBE SECTION */}
+      <section className="section" style={{ background: "var(--navy)", textAlign: "center", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
+        <div className="inner" style={{ maxWidth: "800px", margin: "0 auto" }}>
+          <div className="eyebrow" style={{ color: "var(--teal-lt)" }}>Featured Video</div>
+          <h2 className="sec-title lt" style={{ marginBottom: "1rem" }}>Watch & Subscribe</h2>
+          <p style={{ color: "rgba(238,248,249,.7)", fontSize: "1.05rem", marginBottom: "3rem" }}>
+            Experience our latest worship sessions and animated stories. Subscribe to our YouTube channel so you never miss a new release.
+          </p>
+
+          {/* CMS-Ready Responsive Video Embed Container (16:9 Aspect Ratio) */}
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              paddingBottom: "56.25%", /* 16:9 Ratio */
+              borderRadius: "20px",
+              overflow: "hidden",
+              boxShadow: "0 20px 50px rgba(0,0,0,0.4)",
+              marginBottom: "3rem",
+              backgroundColor: "var(--navy-dk)", 
+            }}
+          >
+            <iframe
+              src="https://www.youtube.com/embed/cHLxVgBLrXk?si=nNmGXO2AVU_2MO--"
+              title="Holy and Sweet Featured Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                border: "none",
+              }}
+            />
+          </div>
+
+          <a href="https://www.youtube.com/@HolyandSweetMedia?sub_confirmation=1" target="_blank" rel="noopener noreferrer">
+            <button className="btn-p" style={{ padding: "1rem 2.5rem", fontSize: ".95rem", boxShadow: "0 8px 24px rgba(10,148,148,0.3)" }}>
+              Subscribe on YouTube
+            </button>
+          </a>
+        </div>
+      </section>
+
       {/* ABOUT THE MUSIC SECTION */}
       <section className="section" style={{ background: "var(--ice2)" }}>
         <div className="inner">
