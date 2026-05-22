@@ -1,9 +1,9 @@
 "use client";
-
+import { useForm, ValidationError } from '@formspree/react';
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
-export default function ContactPage() {
+export default function ContactPage() {const [state, handleSubmit] = useForm("xnjrvrov");
   return (
     <div className="site">
       <NavBar />
@@ -54,39 +54,54 @@ export default function ContactPage() {
 
             {/* Right Side: Form */}
             <div style={{ background: "white", padding: "2.5rem", borderRadius: "20px", border: "1px solid rgba(0,0,0,0.05)", boxShadow: "0 10px 40px rgba(0,0,0,0.03)" }}>
-              <form onSubmit={(e) => e.preventDefault()}>
-                <div className="fr">
-                  <div className="fg">
-                    <label className="fl">First Name</label>
-                    <input className="fi" type="text" placeholder="John" />
-                  </div>
-                  <div className="fg">
-                    <label className="fl">Last Name</label>
-                    <input className="fi" type="text" placeholder="Doe" />
-                  </div>
-                </div>
-                
-                <div className="fg">
-                  <label className="fl">Email Address</label>
-                  <input className="fi" type="email" placeholder="john@example.com" />
-                </div>
+              {state.succeeded ? (
+  <div style={{ textAlign: "center", padding: "3rem 2rem", background: "var(--teal-pale)", borderRadius: "20px" }}>
+    <h3 style={{ fontFamily: "var(--serif)", fontSize: "2rem", color: "var(--navy)", marginBottom: "1rem" }}>
+      Message Sent!
+    </h3>
+    <p style={{ color: "var(--txt-muted)", fontSize: "1.1rem" }}>
+      Thank you for reaching out. We will get back to you shortly.
+    </p>
+  </div>
+) : (
+  <form onSubmit={handleSubmit}>
+    <div className="fr">
+      <div className="fg">
+        <label className="fl">First Name</label>
+        <input className="fi" type="text" name="first_name" placeholder="John" required />
+      </div>
+      <div className="fg">
+        <label className="fl">Last Name</label>
+        <input className="fi" type="text" name="last_name" placeholder="Doe" required />
+      </div>
+    </div>
+    
+    <div className="fg">
+      <label className="fl">Email Address</label>
+      <input className="fi" type="email" name="email" placeholder="john@example.com" required />
+      <ValidationError prefix="Email" field="email" errors={state.errors} style={{ color: "red", fontSize: "0.85rem", marginTop: "0.5rem" }} />
+    </div>
 
-                <div className="fg">
-                  <label className="fl">Inquiry Type</label>
-                  <select className="fi">
-                    <option>General Question</option>
-                    <option>Store / Order Support</option>
-                    <option>Ministry / Partnership</option>
-                  </select>
-                </div>
+    <div className="fg">
+      <label className="fl">Inquiry Type</label>
+      <select className="fi" name="inquiry_type">
+        <option>General Question</option>
+        <option>Store / Order Support</option>
+        <option>Ministry / Partnership</option>
+      </select>
+    </div>
 
-                <div className="fg">
-                  <label className="fl">Message</label>
-                  <textarea className="fi" placeholder="How can we help you?" />
-                </div>
+    <div className="fg">
+      <label className="fl">Message</label>
+      <textarea className="fi" name="message" placeholder="How can we help you?" required />
+      <ValidationError prefix="Message" field="message" errors={state.errors} style={{ color: "red", fontSize: "0.85rem", marginTop: "0.5rem" }} />
+    </div>
 
-                <button className="btn-p" style={{ width: "100%", marginTop: "1rem" }}>Send Message</button>
-              </form>
+    <button type="submit" className="btn-p" disabled={state.submitting} style={{ width: "100%", marginTop: "1rem" }}>
+      {state.submitting ? "Sending..." : "Send Message"}
+    </button>
+  </form>
+)}
             </div>
 
           </div>
