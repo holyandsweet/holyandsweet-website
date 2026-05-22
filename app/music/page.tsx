@@ -9,7 +9,8 @@ export default function MusicPage() {
     <div className="site">
       <NavBar />
 
-      <div className="pg-hero pg-navy" style={{ textAlign: "center" }}>
+      {/* HERO SECTION */}
+      <div className="pg-hero pg-navy" style={{ textAlign: "center", paddingBottom: "4rem" }}>
         <a href="/">
           <button className="back-btn">← Back to Home</button>
         </a>
@@ -58,27 +59,29 @@ export default function MusicPage() {
         </div>
       </div>
 
-      <section className="section" style={{ background: "var(--navy-dk)" }}>
+      {/* MUSIC DIRECTORY SECTION */}
+      <section className="section" style={{ background: "var(--navy-dk)", paddingTop: "3rem", paddingBottom: "3rem" }}>
         <div className="inner">
-          <div className="platform-grid" style={{ marginBottom: "2rem" }}>
+          
+          {/* Platforms */}
+          <div className="platform-grid" style={{ marginBottom: "4rem" }}>
             {PLATFORMS.map((p) => (
               <div key={p.name} className="plat-card">
-                
-<div className="plat-logo">
-  {p.logo === "youtube" && "YouTube"}
-</div>
-
+                <div className="plat-logo">
+                  {p.logo === "youtube" ? "▶" : "♪"} {/* Fallback if icons are broken */}
+                </div>
                 <div className="plat-name">{p.name}</div>
                 <div className="plat-sub">{p.sub}</div>
               </div>
             ))}
           </div>
 
+          {/* Featured Songs */}
           <div className="eyebrow" style={{ color: "var(--teal-lt)" }}>
             Featured Songs
           </div>
 
-          <h2 className="sec-title lt" style={{ marginBottom: "2.5rem" }}>
+          <h2 className="sec-title lt" style={{ marginBottom: "2rem" }}>
             Songs for Every Season of Faith
           </h2>
 
@@ -94,7 +97,7 @@ export default function MusicPage() {
 
                 <button
                   style={{
-                    marginTop: "1rem",
+                    marginTop: "1.25rem",
                     background: "var(--teal)",
                     color: "white",
                     border: "none",
@@ -114,6 +117,51 @@ export default function MusicPage() {
         </div>
       </section>
 
+      {/* PREMIUM PHOTO GALLERY SLIDESHOW */}
+      <section style={{ background: "var(--navy)", padding: "4rem 0" }}>
+        <div className="inner" style={{ padding: "0 2rem", marginBottom: "1.5rem" }}>
+          <div className="eyebrow" style={{ color: "var(--teal-lt)" }}>Ministry in Motion</div>
+          <h2 className="sec-title lt" style={{ fontSize: "2rem", marginBottom: 0 }}>The Heart of Worship</h2>
+        </div>
+        
+        {/* Horizontal Scrolling Container */}
+        <div 
+          style={{ 
+            display: "flex", 
+            gap: "1.5rem", 
+            overflowX: "auto", 
+            padding: "0 2rem 2rem 2rem",
+            scrollSnapType: "x mandatory",
+            WebkitOverflowScrolling: "touch"
+          }}
+        >
+          {/* Gallery Images (Using Unsplash Placeholders) */}
+          {[
+            "https://images.unsplash.com/photo-1510915361894-faa8b413c125?auto=format&fit=crop&w=800&q=80", // Acoustic Guitar
+            "https://images.unsplash.com/photo-1438283173091-5dbf5c5a3206?auto=format&fit=crop&w=800&q=80", // Soundboard
+            "https://images.unsplash.com/photo-1453738773917-9c3eff1db985?auto=format&fit=crop&w=800&q=80", // Worship Hands
+            "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80"  // Studio Mic
+          ].map((src, index) => (
+            <img 
+              key={index}
+              src={src}
+              alt="Holy and Sweet Worship"
+              style={{
+                height: "350px",
+                width: "auto",
+                aspectRatio: "4/3",
+                objectFit: "cover",
+                borderRadius: "16px",
+                scrollSnapAlign: "center",
+                flexShrink: 0,
+                boxShadow: "0 12px 30px rgba(0,0,0,0.4)"
+              }}
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* ABOUT THE MUSIC SECTION */}
       <section className="section" style={{ background: "var(--ice2)" }}>
         <div className="inner">
           <div className="about-grid">
@@ -156,3 +204,4 @@ export default function MusicPage() {
     </div>
   );
 }
+
