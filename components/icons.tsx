@@ -1,11 +1,488 @@
-export const TownIcon = () => (
-  <div style={{ width: 40, height: 40, background: "#38D4E0", borderRadius: 6 }} />
+import React from "react";
+
+/* ═══════════════════════════════════════════
+   PLATFORM BRAND LOGOS
+═══════════════════════════════════════════ */
+export const YouTubeLogo = ({ size = 44 }) => (
+  <svg width={size} height={size * 0.7} viewBox="0 0 90 63" fill="none">
+    <rect width="90" height="63" rx="13" fill="#FF0000"/>
+    <polygon points="36,18 36,45 62,31.5" fill="white"/>
+  </svg>
 );
 
-export const SailboatIcon = (props: { size?: number }) => (
-  <div style={{ width: props.size || 40, height: 40, background: "#0A9494", borderRadius: 6 }} />
+export const SpotifyLogo = ({ size = 44 }) => (
+  <svg width={size} height={size} viewBox="0 0 100 100" fill="none">
+    <circle cx="50" cy="50" r="50" fill="#1DB954"/>
+    <path d="M70 62c-15-9-36-11-52-6-2 1-3-1-2-3 1-1 2-2 4-2 17-5 40-3 57 7 2 1 2 4 0 5-1 0-5 0-7-1z" fill="white"/>
+    <path d="M75 51C58 41 33 39 16 44c-2 1-3-2-2-4 1-1 3-2 5-2 19-6 47-3 65 8 2 1 2 3 0 5-2 1-4 1-6-1l2 1z" fill="white"/>
+    <path d="M65 73c-12-7-28-8-42-4-2 1-3-1-2-2 1-1 2-2 3-2 15-4 33-3 47 5 1 1 1 3 0 3-1 1-4 1-6 0z" fill="white"/>
+  </svg>
 );
 
-export const DoveIcon = () => (
-  <div style={{ width: 40, height: 40, background: "#FFFFFF", border: "2px solid #0A9494", borderRadius: 6 }} />
+export const AppleMusicLogo = ({ size = 44 }) => (
+  <svg width={size} height={size} viewBox="0 0 100 100" fill="none">
+    <rect width="100" height="100" rx="22" fill="#FC3C44"/>
+    <path d="M67 27L52 32v28c-2-1-5-2-8-2-6 0-11 4-11 9s5 9 11 9 11-4 11-9V40l12-4V27z" fill="white"/>
+  </svg>
+);
+
+export const AmazonMusicLogo = ({ size = 44 }) => (
+  <svg width={size} height={size} viewBox="0 0 100 100" fill="none">
+    <rect width="100" height="100" rx="22" fill="#1A3A5C"/>
+    <path d="M18 62c16-10 48-10 64 0 2 1 1 4-1 3-14-7-46-8-62-1-2 1-3-1-1-2z" fill="#FF9900"/>
+    <rect x="34" y="24" width="4" height="22" rx="2" fill="white" opacity=".9"/>
+    <rect x="46" y="20" width="4" height="26" rx="2" fill="white" opacity=".9"/>
+    <rect x="58" y="24" width="4" height="22" rx="2" fill="white" opacity=".9"/>
+  </svg>
+);
+
+/* ═══════════════════════════════════════════
+   SONG / NATURE ICONS
+═══════════════════════════════════════════ */
+export const DoveIcon = ({ size = 72 }) => (
+  <svg width={size} height={size * 0.75} viewBox="0 0 96 72" fill="none">
+    <defs>
+      <linearGradient id="dWing" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stopColor="#FFFFFF"/>
+        <stop offset="100%" stopColor="#D8E8D8"/>
+      </linearGradient>
+    </defs>
+    <path d="M29 33 C18 17 5 10 9 24 C13 33 24 36 29 33 Z" fill="url(#dWing)" stroke="#C4D0C4" strokeWidth="0.8"/>
+    <path d="M11 21 Q18 27 25 29" stroke="#B8C8B8" strokeWidth="0.7" fill="none"/>
+    <path d="M10 26 Q17 31 24 32" stroke="#B8C8B8" strokeWidth="0.7" fill="none"/>
+    <ellipse cx="47" cy="37" rx="21" ry="9" fill="white" stroke="#D0D8D0" strokeWidth="0.7" transform="rotate(-6 47 37)"/>
+    <ellipse cx="43" cy="38" rx="16" ry="6.5" fill="#F6F8F6" opacity="0.5"/>
+    <path d="M32 39 C25 45 19 50 21 46 C23 42 28 40 32 39 Z" fill="#E4EDE4"/>
+    <path d="M25 39 C17 44 13 51 16 53 C20 50 24 44 27 40 Z" fill="white" stroke="#C4CCC4" strokeWidth="0.7"/>
+    <path d="M28 40 C21 47 18 54 21 56 C24 52 28 45 30 42 Z" fill="#F0F4F0" stroke="#C4CCC4" strokeWidth="0.7"/>
+    <path d="M31 41 C26 48 24 55 27 57 C30 53 33 46 34 43 Z" fill="white" stroke="#C4CCC4" strokeWidth="0.7"/>
+    <circle cx="64" cy="28" r="10" fill="white" stroke="#D0D0D0" strokeWidth="0.7"/>
+    <ellipse cx="61" cy="32" rx="6" ry="4.5" fill="#E8EAE8" opacity="0.45"/>
+    <path d="M73 27 L82 29.5 L73 32 Z" fill="#D4930E"/>
+    <line x1="73" y1="29.5" x2="82" y2="29.5" stroke="#A87010" strokeWidth="0.6"/>
+    <circle cx="67" cy="24.5" r="3" fill="#12142A"/>
+    <circle cx="68" cy="23.5" r="1.1" fill="white" opacity="0.92"/>
+    <circle cx="68.5" cy="23" r="0.5" fill="white"/>
+    <path d="M73 32 C69 36 61 39 54 37" stroke="#2A6E1C" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
+    <ellipse cx="57" cy="38" rx="4.5" ry="2.3" fill="#368826" transform="rotate(-22 57 38)"/>
+    <ellipse cx="62.5" cy="36.5" rx="3.8" ry="2" fill="#2C7820" transform="rotate(-5 62.5 36.5)"/>
+    <ellipse cx="68" cy="34.5" rx="3.2" ry="1.8" fill="#449830" transform="rotate(13 68 34.5)"/>
+  </svg>
+);
+
+export const PrayHandsIcon = ({ size = 72 }) => (
+  <svg width={size * 0.68} height={size} viewBox="0 0 56 84" fill="none">
+    <path d="M28 82 C14 82 9 71 9 60 L9 29 C9 23 13 18 17 17 L39 17 C43 18 47 23 47 29 L47 60 C47 71 42 82 28 82 Z" fill="#2E1406"/>
+    <path d="M28 80 C15 80 11 70 11 59 L11 29 C11 24 15 19 19 18 L37 18 C41 19 45 24 45 29 L45 59 C45 70 41 80 28 80 Z" fill="#7A4726"/>
+    <path d="M19 18 L11 31 L11 57 C11 67 15 74 20 78 L20 18 Z" fill="#8C5838" opacity="0.4"/>
+    <path d="M37 18 L45 31 L45 57 C45 67 41 74 36 78 L36 18 Z" fill="#4A2010" opacity="0.4"/>
+    <path d="M17 20 L13 7 C13 5 15 3 17 3 C19 3 21 5 21 7 L21 20" fill="#7A4726" stroke="#3E1C08" strokeWidth="0.9"/>
+    <path d="M21 19 L17 5 C17 3 19 1 21 1 C23 1 25 3 25 5 L25 19" fill="#7E4C2C" stroke="#3E1C08" strokeWidth="0.9"/>
+    <path d="M25 18 L21 4 C21 2 23 0 25 0 C27 0 29 2 29 4 L29 18" fill="#7A4726" stroke="#3E1C08" strokeWidth="0.9"/>
+    <path d="M31 18 L35 4 C35 2 33 0 31 0 C29 0 27 2 27 4 L27 18" fill="#7A4726" stroke="#3E1C08" strokeWidth="0.9"/>
+    <path d="M35 19 L39 5 C39 3 37 1 35 1 C33 1 31 3 31 5 L31 19" fill="#7E4C2C" stroke="#3E1C08" strokeWidth="0.9"/>
+    <path d="M39 20 L43 7 C43 5 41 3 39 3 C37 3 35 5 35 7 L35 20" fill="#7A4726" stroke="#3E1C08" strokeWidth="0.9"/>
+    <path d="M11 36 C7 33 4 38 6 45 C8 49 11 48 11 44 L11 34 Z" fill="#7A4726" stroke="#3E1C08" strokeWidth="0.9"/>
+    <path d="M45 36 C49 33 52 38 50 45 C48 49 45 48 45 44 L45 34 Z" fill="#7A4726" stroke="#3E1C08" strokeWidth="0.9"/>
+    <ellipse cx="17" cy="3.2" rx="2.3" ry="1.5" fill="#C49870"/>
+    <ellipse cx="21" cy="1.2" rx="2.3" ry="1.5" fill="#C49870"/>
+    <ellipse cx="25" cy="0.2" rx="2.3" ry="1.5" fill="#C49870"/>
+    <ellipse cx="31" cy="0.2" rx="2.3" ry="1.5" fill="#C49870"/>
+    <ellipse cx="35" cy="1.2" rx="2.3" ry="1.5" fill="#C49870"/>
+    <ellipse cx="39" cy="3.2" rx="2.3" ry="1.5" fill="#C49870"/>
+    <line x1="28" y1="17" x2="28" y2="74" stroke="#3E1C08" strokeWidth="1.3" opacity="0.42"/>
+    <path d="M17 28 Q28 32 39 28" stroke="#3E1C08" strokeWidth="0.9" fill="none" opacity="0.38"/>
+    <path d="M15 40 Q28 44 41 40" stroke="#3E1C08" strokeWidth="0.8" fill="none" opacity="0.32"/>
+    <ellipse cx="20" cy="38" rx="5.5" ry="11" fill="#9A6038" opacity="0.18"/>
+    <ellipse cx="36" cy="38" rx="5.5" ry="11" fill="#9A6038" opacity="0.18"/>
+    <ellipse cx="28" cy="55" rx="9" ry="12" fill="#8A5230" opacity="0.18"/>
+    <ellipse cx="28" cy="72" rx="14" ry="3.5" fill="#9A6040" opacity="0.16"/>
+  </svg>
+);
+
+export const SunIcon = ({ size = 72 }) => (
+  <svg width={size} height={size} viewBox="0 0 100 100" fill="none">
+    <defs>
+      <radialGradient id="sunG" cx="50%" cy="42%" r="58%">
+        <stop offset="0%" stopColor="#FFF9D0"/>
+        <stop offset="42%" stopColor="#FFCC22"/>
+        <stop offset="100%" stopColor="#E07A08"/>
+      </radialGradient>
+    </defs>
+    {[0,30,60,90,120,150,180,210,240,270,300,330].map((a, i) => {
+      const r = a * Math.PI / 180;
+      const inner = 35, outer = i % 3 === 0 ? 50 : 45;
+      const x1 = Math.round(50 + inner * Math.cos(r));
+      const y1 = Math.round(50 + inner * Math.sin(r));
+      const x2 = Math.round(50 + outer * Math.cos(r));
+      const y2 = Math.round(50 + outer * Math.sin(r));
+      return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke={i % 3 === 0 ? "#C07808" : "#D09010"} strokeWidth={i % 3 === 0 ? 3 : 2} strokeLinecap="round" />;
+    })}
+    <circle cx="50" cy="50" r="35" fill="#FFDD20" opacity="0.16"/>
+    <circle cx="50" cy="50" r="28" fill="url(#sunG)"/>
+    <ellipse cx="42" cy="42" rx="10" ry="7" fill="#FFF8D8" opacity="0.42"/>
+    <ellipse cx="39" cy="39" rx="5" ry="3.5" fill="white" opacity="0.28"/>
+  </svg>
+);
+
+export const SailboatIcon = ({ size = 72 }) => (
+  <svg width={size} height={size * 0.82} viewBox="0 0 100 82" fill="none">
+    <path d="M0 57 C14 52 27 63 43 57 C57 52 69 63 85 58 C92 55 96 59 100 57 L100 82 0 82 Z" fill="#0D6080" opacity="0.28"/>
+    <path d="M0 63 C13 57 31 68 49 62 C63 57 77 65 95 61 L100 62 100 82 0 82 Z" fill="#0A4860" opacity="0.48"/>
+    <path d="M0 68 C19 63 39 72 59 67 C75 62 87 67 100 64 L100 82 0 82 Z" fill="#083848"/>
+    <path d="M26 57 C26 57 31 68 50 68 C69 68 74 57 74 57 Z" fill="#7A3018"/>
+    <path d="M29 57 L71 57 L69 65 C59 70 41 70 31 65 Z" fill="#963C22"/>
+    <line x1="29" y1="57" x2="71" y2="57" stroke="#601808" strokeWidth="1.2"/>
+    <line x1="50" y1="14" x2="50" y2="57" stroke="#4E3828" strokeWidth="3" strokeLinecap="round"/>
+    <path d="M50 16 L50 53 L20 52 C20 52 30 30 50 16 Z" fill="white" stroke="#C4D0D8" strokeWidth="0.9"/>
+    <path d="M50 16 C44 26 30 39 20 52 C30 50 42 48 50 52 Z" fill="#E2EAF2" opacity="0.42"/>
+    <path d="M50 20 L76 51 L50 51 Z" fill="#F2F0EC" stroke="#C8C8C0" strokeWidth="0.9"/>
+    <path d="M50 20 C60 31 72 44 76 51 C66 49 56 47 50 51 Z" fill="#E6E6DC" opacity="0.4"/>
+    <ellipse cx="50" cy="69" rx="21" ry="2" fill="#0A4860" opacity="0.36"/>
+  </svg>
+);
+
+export const LeafBranchIcon = ({ size = 72 }) => (
+  <svg width={size * 0.78} height={size} viewBox="0 0 56 72" fill="none">
+    <path d="M28 70 C28 70 24 55 26 38 C28 20 33 10 37 4" stroke="#42300A" strokeWidth="3.2" strokeLinecap="round" fill="none"/>
+    <path d="M26 54 C37 50 48 42 42 32 C36 32 27 41 26 54 Z" fill="#186838"/>
+    <path d="M26 54 C32 46 38 39 42 32" stroke="#0E6028" strokeWidth="1" fill="none"/>
+    <path d="M28 49 C33 44 37 38 40 34" stroke="#28A850" strokeWidth="0.6" fill="none" opacity="0.55"/>
+    <path d="M27 40 C18 36 10 26 16 15 C22 15 28 26 27 40 Z" fill="#1C7838"/>
+    <path d="M27 40 C22 32 18 24 16 15" stroke="#126030" strokeWidth="1" fill="none"/>
+    <path d="M25 35 C21 29 18 22 17 17" stroke="#2E9850" strokeWidth="0.6" fill="none" opacity="0.55"/>
+    <path d="M31 23 C40 21 47 14 43 8 C38 8 31 15 31 23 Z" fill="#156830"/>
+    <path d="M31 23 C36 17 41 12 43 8" stroke="#0E6028" strokeWidth="0.9" fill="none"/>
+    <path d="M29 30 C21 26 17 18 21 12 C25 13 29 21 29 30 Z" fill="#208840"/>
+    <ellipse cx="36" cy="44" rx="3.5" ry="1.8" fill="#2CB050" opacity="0.38" transform="rotate(-28 36 44)"/>
+    <ellipse cx="20" cy="27" rx="2.8" ry="1.5" fill="#2CB050" opacity="0.3" transform="rotate(18 20 27)"/>
+  </svg>
+);
+
+export const LightRaysIcon = ({ size = 72 }) => (
+  <svg width={size} height={size} viewBox="0 0 100 100" fill="none">
+    <defs>
+      <radialGradient id="lgCore" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stopColor="#FFFEF0"/>
+        <stop offset="45%" stopColor="#FFE840"/>
+        <stop offset="100%" stopColor="#FFA808" stopOpacity="0"/>
+      </radialGradient>
+    </defs>
+    {[0,45,90,135,180,225,270,315].map((a,i) => {
+      const r = a * Math.PI / 180;
+      return <line key={`1-${i}`} x1="50" y1="50" x2={50+48*Math.cos(r)} y2={50+48*Math.sin(r)} stroke="#FFD840" strokeWidth="2.4" strokeLinecap="round" opacity="0.52"/>;
+    })}
+    {[22,67,112,157,202,247,292,337].map((a,i) => {
+      const r = a * Math.PI / 180;
+      return <line key={`2-${i}`} x1="50" y1="50" x2={50+38*Math.cos(r)} y2={50+38*Math.sin(r)} stroke="#FFE860" strokeWidth="1.4" strokeLinecap="round" opacity="0.36"/>;
+    })}
+    <circle cx="50" cy="50" r="44" fill="none" stroke="#FFE040" strokeWidth="1" opacity="0.17"/>
+    <circle cx="50" cy="50" r="34" fill="none" stroke="#FFE880" strokeWidth="1" opacity="0.24"/>
+    <circle cx="50" cy="50" r="20" fill="url(#lgCore)"/>
+    <circle cx="50" cy="50" r="11" fill="#FFEE80" opacity="0.9"/>
+    <circle cx="50" cy="50" r="6" fill="white"/>
+    <circle cx="46" cy="46" r="3" fill="white" opacity="0.7"/>
+  </svg>
+);
+
+/* ═══════════════════════════════════════════
+   KIDS SERIES ICONS
+═══════════════════════════════════════════ */
+export const TownIcon = ({ size = 56 }) => (
+  <svg width={size} height={size * 0.9} viewBox="0 0 72 65" fill="none">
+    <rect x="3" y="28" width="23" height="27" fill="#C47858" rx="1.5"/>
+    <polygon points="3,28 14.5,12 26,28" fill="#DC9070"/>
+    <rect x="9" y="41" width="11" height="14" fill="#6A4226" rx="1"/>
+    <rect x="5" y="30" width="8" height="8" fill="#A8C8E2" rx="1"/>
+    <rect x="17" y="30" width="8" height="8" fill="#A8C8E2" rx="1"/>
+    <rect x="20" y="22" width="33" height="33" fill="#D48870" rx="1.5"/>
+    <polygon points="20,22 36.5,6 53,22" fill="#E8A080"/>
+    <rect x="29" y="40" width="15" height="15" fill="#8B5238" rx="1"/>
+    <rect x="22" y="25" width="10" height="10" fill="#B8DAEE" rx="1"/>
+    <rect x="41" y="25" width="10" height="10" fill="#B8DAEE" rx="1"/>
+    <line x1="36.5" y1="6" x2="36.5" y2="0" stroke="#8B5238" strokeWidth="1.5"/>
+    <circle cx="36.5" cy="0" r="2" fill="#FFCC30"/>
+    <rect x="47" y="30" width="22" height="25" fill="#C47858" rx="1.5"/>
+    <polygon points="47,30 58,17 69,30" fill="#DC9070"/>
+    <rect x="53" y="42" width="10" height="13" fill="#6A4226" rx="1"/>
+    <rect x="49" y="32" width="8" height="8" fill="#A0C8E2" rx="1"/>
+    <rect x="0" y="55" width="72" height="10" fill="#689070" rx="2.5"/>
+    <rect x="29" y="55" width="15" height="10" fill="#B0A878"/>
+  </svg>
+);
+
+export const ButterflyIcon = ({ size = 56 }) => (
+  <svg width={size} height={size * 0.9} viewBox="0 0 80 72" fill="none">
+    <defs>
+      <radialGradient id="bwL" cx="30%" cy="38%" r="70%">
+        <stop offset="0%" stopColor="#5CD0D8"/>
+        <stop offset="100%" stopColor="#1888A0"/>
+      </radialGradient>
+      <radialGradient id="bwR" cx="70%" cy="38%" r="70%">
+        <stop offset="0%" stopColor="#54C8D0"/>
+        <stop offset="100%" stopColor="#1880A0"/>
+      </radialGradient>
+    </defs>
+    <path d="M38 35 C32 20 16 10 8 16 C2 22 10 39 25 41 C31 43 37 39 38 35 Z" fill="url(#bwL)" stroke="#0C7080" strokeWidth="0.9"/>
+    <path d="M42 35 C48 20 64 10 72 16 C78 22 70 39 55 41 C49 43 43 39 42 35 Z" fill="url(#bwR)" stroke="#0C7080" strokeWidth="0.9"/>
+    <path d="M38 38 C30 44 18 53 14 61 C20 65 34 58 38 48 C39 44 39 40 38 38 Z" fill="#1898A8" stroke="#0C7080" strokeWidth="0.9" opacity="0.9"/>
+    <path d="M42 38 C50 44 62 53 66 61 C60 65 46 58 42 48 C41 44 41 40 42 38 Z" fill="#1898A8" stroke="#0C7080" strokeWidth="0.9" opacity="0.9"/>
+    <circle cx="23" cy="25" r="5" fill="white" opacity="0.26"/>
+    <circle cx="57" cy="25" r="5" fill="white" opacity="0.26"/>
+    <circle cx="19" cy="52" r="3.5" fill="white" opacity="0.2"/>
+    <circle cx="61" cy="52" r="3.5" fill="white" opacity="0.2"/>
+    <ellipse cx="40" cy="40" rx="3.2" ry="18" fill="#16404C"/>
+    <ellipse cx="40" cy="28" rx="4.5" ry="7" fill="#1C5060"/>
+    <circle cx="40" cy="20" r="5.5" fill="#16404C"/>
+    <path d="M38 16 C34 9 25 5 21 3" stroke="#16404C" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
+    <path d="M42 16 C46 9 55 5 59 3" stroke="#16404C" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
+    <circle cx="20" cy="2.5" r="2.5" fill="#38D0D8"/>
+    <circle cx="60" cy="2.5" r="2.5" fill="#38D0D8"/>
+  </svg>
+);
+
+export const BuilderIcon = ({ size = 56 }) => (
+  <svg width={size} height={size} viewBox="0 0 60 60" fill="none">
+    <rect x="8" y="25" width="44" height="8.5" rx="4" fill="#7B4A28" transform="rotate(-42 30 29)"/>
+    <rect x="8" y="25" width="44" height="4" rx="3" fill="#9A6038" transform="rotate(-42 30 29)" opacity="0.55"/>
+    <rect x="29" y="4" width="24" height="16" rx="4" fill="#58687A" transform="rotate(-42 41 12)"/>
+    <rect x="31" y="6" width="16" height="12" rx="3" fill="#6A7A8C" transform="rotate(-42 39 12)"/>
+    <rect x="35" y="8" width="7" height="8" rx="2" fill="#8098AC" transform="rotate(-42 38.5 12)" opacity="0.55"/>
+    <path d="M8 47 C6 45 8 39 12 37 L18 43 C16 47 11 48 8 47 Z" fill="#58687A" stroke="#464E5A" strokeWidth="0.9"/>
+    <rect x="16" y="37" width="26" height="6" rx="3" fill="#6A7A8C" transform="rotate(-45 29 40)"/>
+    <rect x="20" y="39" width="18" height="4" rx="2" fill="#7888A0" transform="rotate(-45 29 41)" opacity="0.5"/>
+  </svg>
+);
+
+export const MusicNoteIcon = ({ size = 56 }) => (
+  <svg width={size} height={size} viewBox="0 0 60 60" fill="none">
+    {[22,28,34].map(y => <line key={y} x1="4" y1={y} x2="56" y2={y} stroke="#1A7888" strokeWidth="1" opacity="0.22"/>)}
+    <ellipse cx="18" cy="37" rx="7.5" ry="5.5" fill="#0A7880" transform="rotate(-14 18 37)"/>
+    <ellipse cx="17" cy="36" rx="4.5" ry="3" fill="#10A090" transform="rotate(-14 17 36)"/>
+    <line x1="25" y1="33.5" x2="25" y2="9" stroke="#0A7880" strokeWidth="3.2" strokeLinecap="round"/>
+    <path d="M25 9 C34 13 36 20 32 27" stroke="#0A7880" strokeWidth="2.3" fill="none" strokeLinecap="round"/>
+    <ellipse cx="40" cy="31" rx="7.5" ry="5.5" fill="#0A7880" transform="rotate(-14 40 31)"/>
+    <ellipse cx="39" cy="30" rx="4.5" ry="3" fill="#10A090" transform="rotate(-14 39 30)"/>
+    <line x1="47" y1="27.5" x2="47" y2="5" stroke="#0A7880" strokeWidth="3.2" strokeLinecap="round"/>
+    <path d="M47 5 C56 9 58 16 54 23" stroke="#0A7880" strokeWidth="2.3" fill="none" strokeLinecap="round"/>
+    <path d="M25 9 L47 5" stroke="#0A7880" strokeWidth="3.8" strokeLinecap="round"/>
+    <path d="M25 14.5 L47 10.5" stroke="#0A7880" strokeWidth="3.2" strokeLinecap="round"/>
+  </svg>
+);
+
+export const BooksStackIcon = ({ size = 56 }) => (
+  <svg width={size} height={size} viewBox="0 0 60 60" fill="none">
+    <rect x="5" y="45" width="50" height="13" rx="2.5" fill="#B83820"/>
+    <rect x="5" y="45" width="9" height="13" rx="2.5" fill="#922810"/>
+    <line x1="14" y1="45" x2="14" y2="58" stroke="#781C08" strokeWidth="0.6"/>
+    <rect x="7" y="31" width="46" height="15" rx="2.5" fill="#1A7080"/>
+    <rect x="7" y="31" width="8" height="15" rx="2.5" fill="#105868"/>
+    <line x1="15" y1="31" x2="15" y2="46" stroke="#084058" strokeWidth="0.6"/>
+    <line x1="20" y1="37" x2="46" y2="37" stroke="white" strokeWidth="1.2" opacity="0.28"/>
+    <line x1="20" y1="41" x2="42" y2="41" stroke="white" strokeWidth="1.2" opacity="0.28"/>
+    <rect x="9" y="19" width="42" height="14" rx="2.5" fill="#C88C18"/>
+    <rect x="9" y="19" width="8" height="14" rx="2.5" fill="#A07010"/>
+    <line x1="17" y1="19" x2="17" y2="33" stroke="#806010" strokeWidth="0.6"/>
+    <line x1="22" y1="24" x2="46" y2="24" stroke="white" strokeWidth="1.2" opacity="0.28"/>
+    <line x1="22" y1="28" x2="40" y2="28" stroke="white" strokeWidth="1.2" opacity="0.28"/>
+    <path d="M11 7 C20 5 28 7 30 11 C32 7 40 5 49 7 L49 19 C40 17 32 19 30 23 C28 19 20 17 11 19 Z" fill="#F2EAD8"/>
+    <line x1="30" y1="11" x2="30" y2="23" stroke="#C0B090" strokeWidth="1.3"/>
+    {[10,14].map(y => <line key={y} x1="15" y1={y} x2="28" y2={y} stroke="#A09070" strokeWidth="0.8" opacity="0.5"/>)}
+    {[10,14].map(y => <line key={y} x1="32" y1={y} x2="45" y2={y} stroke="#A09070" strokeWidth="0.8" opacity="0.5"/>)}
+  </svg>
+);
+
+export const OpenBibleIcon = ({ size = 56 }) => (
+  <svg width={size} height={size} viewBox="0 0 60 60" fill="none">
+    <path d="M4 8 C4 6 6 4 8 4 L52 4 C54 4 56 6 56 8 L56 52 C56 54 54 56 52 56 L8 56 C6 56 4 54 4 52 Z" fill="#7A2818"/>
+    <path d="M8 10 L30 12.5 L30 54.5 L8 52 Z" fill="#F4EEE2"/>
+    <path d="M30 12.5 L52 10 L52 52 L30 54.5 Z" fill="#EDE6D4"/>
+    <rect x="28" y="10" width="4" height="44" fill="#681808"/>
+    <rect x="15.5" y="26" width="3.5" height="15" rx="1.5" fill="#C03818" opacity="0.52"/>
+    <rect x="10" y="30.5" width="14" height="3.5" rx="1.5" fill="#C03818" opacity="0.52"/>
+    {[20,24,28,32,36,40,44].map(y => (
+      <g key={y}>
+        <line x1="11" y1={y} x2="26" y2={y} stroke="#9A9080" strokeWidth="0.8" opacity="0.6"/>
+        <line x1="34" y1={y} x2="49" y2={y} stroke="#9A9080" strokeWidth="0.8" opacity="0.6"/>
+      </g>
+    ))}
+    <line x1="32" y1="54.5" x2="30" y2="63" stroke="#B82818" strokeWidth="2.4" strokeLinecap="round"/>
+    <line x1="32" y1="54.5" x2="34" y2="63" stroke="#8E1408" strokeWidth="2.4" strokeLinecap="round"/>
+  </svg>
+);
+
+/* ═══════════════════════════════════════════
+   PRODUCTS
+═══════════════════════════════════════════ */
+export const TShirtIcon = () => (
+  <svg width="62" height="58" viewBox="0 0 62 58" fill="none">
+    <path d="M13 12 L23 8 Q31 17 39 8 L49 12 L54 26 L44 24 L44 54 L18 54 L18 24 L8 26 Z" fill="#2080A0" stroke="#196880" strokeWidth="0.9"/>
+    <path d="M21 8 Q31 18 41 8" fill="none" stroke="#196880" strokeWidth="0.9"/>
+    <path d="M14 13 L10 23 L18 23 Z" fill="#1A7090" opacity="0.45"/>
+    <path d="M48 13 L52 23 L44 23 Z" fill="#1A7090" opacity="0.45"/>
+  </svg>
+);
+
+export const MugIcon = () => (
+  <svg width="60" height="62" viewBox="0 0 60 62" fill="none">
+    <path d="M10 18 L10 50 C10 52 12 54 14 54 L42 54 C44 54 46 52 46 50 L46 18 Z" fill="#E6F6F8" stroke="#0A9494" strokeWidth="1.3"/>
+    <rect x="10" y="18" width="36" height="7" fill="#0A9494" opacity="0.14"/>
+    <path d="M46 27 C54 27 54 43 46 43" stroke="#0A9494" strokeWidth="2.8" strokeLinecap="round" fill="none"/>
+    <line x1="16" y1="31" x2="40" y2="31" stroke="#0A9494" strokeWidth="1.2" opacity="0.38"/>
+    <path d="M20 37 C24 34 32 34 36 37" stroke="#0A9494" strokeWidth="1.1" fill="none" opacity="0.38" strokeLinecap="round"/>
+    <path d="M14 54 C12 56 10 58 10 58 L46 58 C46 58 48 56 46 54 Z" fill="#D4F0F2"/>
+  </svg>
+);
+
+export const JournalIcon = () => (
+  <svg width="58" height="62" viewBox="0 0 58 62" fill="none">
+    <rect x="10" y="5" width="40" height="52" rx="4" fill="#082040" stroke="#0A3060" strokeWidth="0.9"/>
+    <rect x="10" y="5" width="9" height="52" rx="4" fill="#0A2848"/>
+    <rect x="17" y="5" width="2" height="52" fill="#061830"/>
+    {[15,21,27,33,39,45,51].map(y => <line key={y} x1="23" y1={y} x2="45" y2={y} stroke="#DAF0F2" strokeWidth="0.8" opacity="0.18"/>)}
+    <line x1="23" y1="14" x2="45" y2="14" stroke="#DAF0F2" strokeWidth="1" opacity="0.45"/>
+    <rect x="27" y="9" width="14" height="3.5" rx="1.7" fill="#0A9494" opacity="0.65"/>
+    <path d="M34 40 L38 31 L42 40 L38 37.5 Z" fill="#38D4E0" opacity="0.6" transform="rotate(18 38 36)"/>
+    <rect x="36" y="24" width="2.5" height="18" rx="1.2" fill="#38D4E0" opacity="0.6" transform="rotate(18 37 33)"/>
+  </svg>
+);
+
+export const HoodieIcon = () => (
+  <svg width="62" height="62" viewBox="0 0 62 62" fill="none">
+    <path d="M8 17 C8 17 14 10 23 9 L25 17 C27 15 31 14 31 14 C31 14 35 15 37 17 L39 9 C48 10 54 17 54 17 L58 32 L47 29 L47 60 L15 60 L15 29 L4 32 Z" fill="#1A5870" stroke="#114860" strokeWidth="0.9"/>
+    <path d="M23 9 L25 17 C27 15 31 14 31 14" fill="none" stroke="#0A3848" strokeWidth="0.9"/>
+    <path d="M39 9 L37 17 C35 15 31 14 31 14" fill="none" stroke="#0A3848" strokeWidth="0.9"/>
+    <path d="M25 17 C25 17 27 23 31 23 C35 23 37 17 37 17" fill="#E0F4F8" stroke="#114860" strokeWidth="0.9"/>
+  </svg>
+);
+
+export const WallArtIcon = () => (
+  <svg width="62" height="62" viewBox="0 0 62 62" fill="none">
+    <rect x="6" y="6" width="50" height="50" rx="3.5" fill="#F6FEFF" stroke="#0A9494" strokeWidth="2.2"/>
+    <rect x="6" y="6" width="50" height="7" rx="3.5" fill="#0A9494" opacity="0.14"/>
+    <path d="M14 42 C18 33 25 29 31 29 C37 29 41 35 45 29" stroke="#0A9494" strokeWidth="2" fill="none" strokeLinecap="round"/>
+    <circle cx="22" cy="22" r="5.5" fill="none" stroke="#DAF0F2" strokeWidth="1.7"/>
+    <circle cx="22" cy="22" r="2.5" fill="#DAF0F2"/>
+    <line x1="3" y1="11" x2="7" y2="11" stroke="#0A9494" strokeWidth="3" strokeLinecap="round"/>
+    <line x1="55" y1="11" x2="59" y2="11" stroke="#0A9494" strokeWidth="3" strokeLinecap="round"/>
+  </svg>
+);
+
+export const CalendarIcon = () => (
+  <svg width="62" height="62" viewBox="0 0 62 62" fill="none">
+    <rect x="6" y="10" width="50" height="46" rx="5" fill="white" stroke="#0A9494" strokeWidth="1.6"/>
+    <rect x="6" y="10" width="50" height="17" rx="5" fill="#082040"/>
+    <rect x="6" y="19" width="50" height="8" fill="#082040"/>
+    <rect x="15" y="3" width="5" height="13" rx="2.5" fill="#0A9494"/>
+    <rect x="42" y="3" width="5" height="13" rx="2.5" fill="#0A9494"/>
+    <line x1="6" y1="35" x2="56" y2="35" stroke="#DAF0F2" strokeWidth="0.9" opacity="0.5"/>
+    <line x1="6" y1="45" x2="56" y2="45" stroke="#DAF0F2" strokeWidth="0.9" opacity="0.5"/>
+    {[[14,41],[24,41],[34,41],[44,41],[14,51],[24,51],[34,51]].map(([x,y],i) => <circle key={i} cx={x} cy={y} r="2.8" fill="#0A9494" opacity="0.38"/>)}
+    <circle cx="44" cy="41" r="2.8" fill="#0A9494"/>
+    <text x="31" y="28" fontSize="8.5" fill="white" fontFamily="Georgia,serif" fontWeight="600" textAnchor="middle">2025</text>
+  </svg>
+);
+
+export const GiftBoxIcon = ({ size = 60 }) => (
+  <svg width={size} height={size} viewBox="0 0 60 60" fill="none">
+    <rect x="8" y="27" width="44" height="28" rx="3" fill="#0A9494"/>
+    <rect x="8" y="27" width="44" height="9" rx="3" fill="#088080"/>
+    <rect x="6" y="20" width="48" height="11" rx="3.5" fill="#082040"/>
+    <line x1="28" y1="20" x2="28" y2="55" stroke="#DAF0F2" strokeWidth="2.8"/>
+    <line x1="32" y1="20" x2="32" y2="55" stroke="#DAF0F2" strokeWidth="2.8"/>
+    <line x1="6" y1="25.5" x2="54" y2="25.5" stroke="#DAF0F2" strokeWidth="2.8"/>
+    <path d="M30 20 C30 20 24 13 24 9 C24 7 26 5 28 6 C30 7 30 12 30 20 Z" fill="#18B4B4"/>
+    <path d="M30 20 C30 20 36 13 36 9 C36 7 34 5 32 6 C30 7 30 12 30 20 Z" fill="#38C4C4"/>
+    <circle cx="30" cy="20" r="3.2" fill="#DAF0F2"/>
+  </svg>
+);
+
+export const NotebookIcon = () => (
+  <svg width="60" height="62" viewBox="0 0 60 62" fill="none">
+    <rect x="10" y="4" width="40" height="54" rx="3.5" fill="#EEF8F9" stroke="#0A9494" strokeWidth="1.3"/>
+    <rect x="10" y="4" width="9" height="54" rx="3.5" fill="#DAF0F2"/>
+    <rect x="17" y="4" width="2.5" height="54" fill="#B4E4EC"/>
+    {[14,21,28,35,42,49].map(y => <line key={y} x1="23" y1={y} x2="45" y2={y} stroke="#0A9494" strokeWidth="0.9" opacity="0.22"/>)}
+    <line x1="23" y1="13" x2="45" y2="13" stroke="#0A9494" strokeWidth="1.1" opacity="0.48"/>
+    <path d="M37 37 L41 28 L45 37 L41 35 Z" fill="#0A9494" opacity="0.65" transform="rotate(22 41 33)"/>
+    <rect x="37" y="22" width="2.8" height="19" rx="1.4" fill="#0A9494" opacity="0.65" transform="rotate(22 38.4 31.5)"/>
+    <circle cx="4" cy="14" r="3.2" fill="#0A9494" opacity="0.45"/>
+    <circle cx="4" cy="31" r="3.2" fill="#0A9494" opacity="0.45"/>
+    <circle cx="4" cy="48" r="3.2" fill="#0A9494" opacity="0.45"/>
+  </svg>
+);
+
+export const ColoringBookIcon = () => (
+  <svg width="60" height="62" viewBox="0 0 60 62" fill="none">
+    <rect x="8" y="4" width="44" height="54" rx="3.5" fill="white" stroke="#38D4E0" strokeWidth="1.7"/>
+    <rect x="8" y="4" width="10" height="54" rx="3.5" fill="#38D4E0" opacity="0.28"/>
+    <circle cx="30" cy="26" r="11" fill="none" stroke="#38D4E0" strokeWidth="1.7" strokeDasharray="3.5 2.5"/>
+    <circle cx="30" cy="26" r="6" fill="#DAF0F2"/>
+    <path d="M17 40 L23 35 L30 42 L37 35 L43 40" stroke="#18B8CC" strokeWidth="1.7" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+    <line x1="14" y1="48" x2="46" y2="48" stroke="#38D4E0" strokeWidth="1.1" opacity="0.48"/>
+    <rect x="44" y="18" width="5" height="22" rx="2.5" fill="#FF8C50" transform="rotate(22 46.5 29)"/>
+    <rect x="44" y="17" width="5" height="7" rx="1.5" fill="#F0D880" transform="rotate(22 46.5 29)"/>
+    <path d="M44 39 L46.5 44 L49 39" fill="#FF6A30" transform="rotate(22 46.5 29)"/>
+  </svg>
+);
+
+export const StorybookIcon = () => (
+  <svg width="60" height="62" viewBox="0 0 60 62" fill="none">
+    <path d="M8 7 C8 5 10 3 12 3 L48 3 C50 3 52 5 52 7 L52 55 C52 57 50 59 48 59 L12 59 C10 59 8 57 8 55 Z" fill="#082040"/>
+    <path d="M10 9 L30 12 L30 57 L10 55 Z" fill="#F4EEE0"/>
+    <path d="M30 12 L50 9 L50 55 L30 57 Z" fill="#EDE6D4"/>
+    <rect x="28" y="9" width="4" height="46" fill="#061228"/>
+    <circle cx="20" cy="24" r="8" fill="none" stroke="#38D4E0" strokeWidth="1.7"/>
+    <circle cx="20" cy="24" r="4" fill="#38D4E0" opacity="0.48"/>
+    <path d="M15 36 C17 31 23 30 26 34" stroke="#0A9494" strokeWidth="1.4" fill="none" strokeLinecap="round"/>
+    <path d="M13 42 C16 38 24 37 27 41" stroke="#38D4E0" strokeWidth="1.2" fill="none" strokeLinecap="round"/>
+    <path d="M34 24 C38 19 45 19 47 24" stroke="#38D4E0" strokeWidth="1.6" fill="none" strokeLinecap="round"/>
+    {[30,36,42].map(y => <line key={y} x1="34" y1={y} x2="48" y2={y} stroke="#0A9494" strokeWidth="1" opacity="0.45"/>)}
+  </svg>
+);
+
+export const FlashcardsIcon = () => (
+  <svg width="62" height="60" viewBox="0 0 62 60" fill="none">
+    <rect x="14" y="14" width="42" height="34" rx="4.5" fill="#DAF0F2" stroke="#18B8CC" strokeWidth="1.6" transform="rotate(-6 35 31)"/>
+    <rect x="9" y="16" width="42" height="34" rx="4.5" fill="#EEF8F9" stroke="#0A9494" strokeWidth="1.6" transform="rotate(-2 30 33)"/>
+    <rect x="10" y="16" width="42" height="34" rx="4.5" fill="white" stroke="#0A9494" strokeWidth="1.6"/>
+    <text x="31" y="39" fontSize="18" fill="#082040" fontFamily="Georgia,serif" fontWeight="700" textAnchor="middle" opacity="0.88">A</text>
+    <text x="31" y="27" fontSize="7.5" fill="#0A9494" fontFamily="Georgia,serif" textAnchor="middle">Bible Word</text>
+    <line x1="16" y1="44" x2="46" y2="44" stroke="#DAF0F2" strokeWidth="1.3"/>
+    <text x="31" y="48" fontSize="6.5" fill="#487080" fontFamily="Georgia,serif" textAnchor="middle">Verse Reference</text>
+  </svg>
+);
+
+export const StickerIcon = () => (
+  <svg width="62" height="62" viewBox="0 0 62 62" fill="none">
+    <circle cx="31" cy="31" r="25" fill="#EEF8F9" stroke="#38D4E0" strokeWidth="2.3" strokeDasharray="5 3.5"/>
+    <circle cx="21" cy="24" r="6.5" fill="#38D4E0" opacity="0.48"/>
+    <circle cx="39" cy="22" r="5.5" fill="#18B8CC" opacity="0.42"/>
+    <circle cx="28" cy="37" r="7.5" fill="#0A9494" opacity="0.32"/>
+    <path d="M20 41 C20 41 25 37 31 38 C37 39 41 43 41 43" stroke="#082040" strokeWidth="2.8" strokeLinecap="round" fill="none"/>
+    <circle cx="23" cy="25" r="2" fill="#082040"/>
+    <circle cx="39" cy="22" r="2" fill="#082040"/>
+    <path d="M24 20 C24 20 26 18 28 19" stroke="#082040" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
+    <path d="M37 18 C37 18 39 16 41 17" stroke="#082040" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
+  </svg>
+);
+
+export const PlushIcon = () => (
+  <svg width="62" height="62" viewBox="0 0 62 62" fill="none">
+    <circle cx="21" cy="15" r="10.5" fill="#38D4E0"/>
+    <circle cx="41" cy="15" r="10.5" fill="#38D4E0"/>
+    <circle cx="21" cy="15" r="8.5" fill="#5AE0E8"/>
+    <circle cx="41" cy="15" r="8.5" fill="#5AE0E8"/>
+    <ellipse cx="31" cy="38" rx="19" ry="21" fill="#38D4E0"/>
+    <ellipse cx="31" cy="38" rx="17" ry="19" fill="#5AE0E8"/>
+    <ellipse cx="31" cy="22" rx="15" ry="13" fill="#5AE0E8"/>
+    <circle cx="26.5" cy="32" r="2.8" fill="#082040"/>
+    <circle cx="35.5" cy="32" r="2.8" fill="#082040"/>
+    <circle cx="27.3" cy="31.2" r="1" fill="white"/>
+    <circle cx="36.3" cy="31.2" r="1" fill="white"/>
+    <ellipse cx="31" cy="37" rx="5.5" ry="3.2" fill="#38D4E0"/>
+    <path d="M27 41 C27 41 29 44 31 44 C33 44 35 41 35 41" stroke="#082040" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
+    <path d="M16 30 C14 28 11 30 13 33 C15 36 16 34 16 30 Z" fill="#38D4E0" stroke="#28C4CC" strokeWidth="0.9"/>
+    <path d="M46 30 C48 28 51 30 49 33 C47 36 46 34 46 30 Z" fill="#38D4E0" stroke="#28C4CC" strokeWidth="0.9"/>
+  </svg>
 );
