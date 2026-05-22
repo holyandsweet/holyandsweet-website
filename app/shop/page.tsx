@@ -1,9 +1,11 @@
 "use client";
+
+import { useState } from "react";
 import { PRODUCTS_ADULT, PRODUCTS_KIDS } from "@/lib/data";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 
-export default function ShopPage() {
+export default function ShopPage() {const [shopTab, setShopTab] = useState("adult");
   return (
     <div className="site">
       <NavBar />
