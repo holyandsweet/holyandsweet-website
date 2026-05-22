@@ -71,35 +71,28 @@ export const DoveIcon = ({ size = 72 }) => (
 );
 
 export const PrayHandsIcon = ({ size = 72 }) => (
-  <svg width={size * 0.68} height={size} viewBox="0 0 56 84" fill="none">
-    <path d="M28 82 C14 82 9 71 9 60 L9 29 C9 23 13 18 17 17 L39 17 C43 18 47 23 47 29 L47 60 C47 71 42 82 28 82 Z" fill="#2E1406"/>
-    <path d="M28 80 C15 80 11 70 11 59 L11 29 C11 24 15 19 19 18 L37 18 C41 19 45 24 45 29 L45 59 C45 70 41 80 28 80 Z" fill="#7A4726"/>
-    <path d="M19 18 L11 31 L11 57 C11 67 15 74 20 78 L20 18 Z" fill="#8C5838" opacity="0.4"/>
-    <path d="M37 18 L45 31 L45 57 C45 67 41 74 36 78 L36 18 Z" fill="#4A2010" opacity="0.4"/>
-    <path d="M17 20 L13 7 C13 5 15 3 17 3 C19 3 21 5 21 7 L21 20" fill="#7A4726" stroke="#3E1C08" strokeWidth="0.9"/>
-    <path d="M21 19 L17 5 C17 3 19 1 21 1 C23 1 25 3 25 5 L25 19" fill="#7E4C2C" stroke="#3E1C08" strokeWidth="0.9"/>
-    <path d="M25 18 L21 4 C21 2 23 0 25 0 C27 0 29 2 29 4 L29 18" fill="#7A4726" stroke="#3E1C08" strokeWidth="0.9"/>
-    <path d="M31 18 L35 4 C35 2 33 0 31 0 C29 0 27 2 27 4 L27 18" fill="#7A4726" stroke="#3E1C08" strokeWidth="0.9"/>
-    <path d="M35 19 L39 5 C39 3 37 1 35 1 C33 1 31 3 31 5 L31 19" fill="#7E4C2C" stroke="#3E1C08" strokeWidth="0.9"/>
-    <path d="M39 20 L43 7 C43 5 41 3 39 3 C37 3 35 5 35 7 L35 20" fill="#7A4726" stroke="#3E1C08" strokeWidth="0.9"/>
-    <path d="M11 36 C7 33 4 38 6 45 C8 49 11 48 11 44 L11 34 Z" fill="#7A4726" stroke="#3E1C08" strokeWidth="0.9"/>
-    <path d="M45 36 C49 33 52 38 50 45 C48 49 45 48 45 44 L45 34 Z" fill="#7A4726" stroke="#3E1C08" strokeWidth="0.9"/>
-    <ellipse cx="17" cy="3.2" rx="2.3" ry="1.5" fill="#C49870"/>
-    <ellipse cx="21" cy="1.2" rx="2.3" ry="1.5" fill="#C49870"/>
-    <ellipse cx="25" cy="0.2" rx="2.3" ry="1.5" fill="#C49870"/>
-    <ellipse cx="31" cy="0.2" rx="2.3" ry="1.5" fill="#C49870"/>
-    <ellipse cx="35" cy="1.2" rx="2.3" ry="1.5" fill="#C49870"/>
-    <ellipse cx="39" cy="3.2" rx="2.3" ry="1.5" fill="#C49870"/>
-    <line x1="28" y1="17" x2="28" y2="74" stroke="#3E1C08" strokeWidth="1.3" opacity="0.42"/>
-    <path d="M17 28 Q28 32 39 28" stroke="#3E1C08" strokeWidth="0.9" fill="none" opacity="0.38"/>
-    <path d="M15 40 Q28 44 41 40" stroke="#3E1C08" strokeWidth="0.8" fill="none" opacity="0.32"/>
-    <ellipse cx="20" cy="38" rx="5.5" ry="11" fill="#9A6038" opacity="0.18"/>
-    <ellipse cx="36" cy="38" rx="5.5" ry="11" fill="#9A6038" opacity="0.18"/>
-    <ellipse cx="28" cy="55" rx="9" ry="12" fill="#8A5230" opacity="0.18"/>
-    <ellipse cx="28" cy="72" rx="14" ry="3.5" fill="#9A6040" opacity="0.16"/>
+  <svg width={size} height={size} viewBox="0 0 100 100" fill="none">
+    {/* Soft background halo */}
+    <circle cx="50" cy="50" r="45" fill="#EEF8F9" opacity="0.15" />
+    
+    {/* Left Hand Silhouette */}
+    <path d="M48 25 C 40 30 35 45 38 65 L 48 80 V 25 Z" fill="#0A9494" />
+    
+    {/* Right Hand Silhouette */}
+    <path d="M52 25 C 60 30 65 45 62 65 L 52 80 V 25 Z" fill="#18C4C4" />
+    
+    {/* Wrists/Sleeves */}
+    <path d="M38 65 L 48 80 V 95 L 32 95 Z" fill="#082040" />
+    <path d="M62 65 L 52 80 V 95 L 68 95 Z" fill="#113468" />
+    
+    {/* Thumbs overlay line to give it shape */}
+    <path d="M48 45 C 43 50 43 55 48 60" stroke="#EEF8F9" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+    <path d="M52 42 C 58 48 58 54 52 59" stroke="#EEF8F9" strokeWidth="2.5" strokeLinecap="round" fill="none"/>
+    
+    {/* Little spark above the hands */}
+    <path d="M50 8 L 52 14 L 58 16 L 52 18 L 50 24 L 48 18 L 42 16 L 48 14 Z" fill="#38D4E0" />
   </svg>
 );
-
 export const SunIcon = ({ size = 72 }) => (
   <svg width={size} height={size} viewBox="0 0 100 100" fill="none">
     <defs>
