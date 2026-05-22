@@ -1,6 +1,7 @@
 "use client";
-import Footer from "@/components/Footer";
 
+import { SONGS, PLATFORMS } from "@/lib/data";
+import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 
 export default function MusicPage() {
@@ -62,7 +63,11 @@ export default function MusicPage() {
           <div className="platform-grid" style={{ marginBottom: "2rem" }}>
             {PLATFORMS.map((p) => (
               <div key={p.name} className="plat-card">
-                {p.logo}
+                
+<div className="plat-logo">
+  {p.logo === "youtube" && "YouTube"}
+</div>
+
                 <div className="plat-name">{p.name}</div>
                 <div className="plat-sub">{p.sub}</div>
               </div>
