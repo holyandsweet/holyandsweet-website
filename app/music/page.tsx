@@ -1,6 +1,6 @@
 "use client";
 
-import { SONGS, PLATFORMS } from "@/lib/data";
+import { SONGS } from "@/lib/data";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 
@@ -66,22 +66,9 @@ export default function MusicPage() {
       </div>
 
       {/* MUSIC DIRECTORY SECTION */}
-      <section className="section" style={{ background: "var(--navy-dk)", paddingTop: "4rem", paddingBottom: "5rem" }}>
+      <section className="section" style={{ background: "var(--navy-dk)", paddingTop: "5rem", paddingBottom: "5rem" }}>
         <div className="inner">
           
-          {/* Platforms (Top Row) */}
-          <div className="platform-grid" style={{ marginBottom: "5rem" }}>
-            {PLATFORMS.map((p) => (
-              <div key={p.name} className="plat-card">
-                <div className="plat-logo">
-                  {p.logo === "youtube" ? "▶" : "♪"}
-                </div>
-                <div className="plat-name">{p.name}</div>
-                <div className="plat-sub">{p.sub}</div>
-              </div>
-            ))}
-          </div>
-
           {/* 2-Column Layout: Songs on Left, Slideshow on Right */}
           <div
             style={{
