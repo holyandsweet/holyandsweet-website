@@ -8,6 +8,12 @@ export default function MusicPage() {
   return (
     <div className="site">
       <NavBar />
+      
+      {/* Hide scrollbar for the slideshow to keep it looking premium */}
+      <style>{`
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+      `}</style>
 
       {/* HERO SECTION */}
       <div className="pg-hero pg-navy" style={{ textAlign: "center", paddingBottom: "4rem" }}>
@@ -60,15 +66,15 @@ export default function MusicPage() {
       </div>
 
       {/* MUSIC DIRECTORY SECTION */}
-      <section className="section" style={{ background: "var(--navy-dk)", paddingTop: "3rem", paddingBottom: "3rem" }}>
+      <section className="section" style={{ background: "var(--navy-dk)", paddingTop: "4rem", paddingBottom: "5rem" }}>
         <div className="inner">
           
-          {/* Platforms */}
-          <div className="platform-grid" style={{ marginBottom: "4rem" }}>
+          {/* Platforms (Top Row) */}
+          <div className="platform-grid" style={{ marginBottom: "5rem" }}>
             {PLATFORMS.map((p) => (
               <div key={p.name} className="plat-card">
                 <div className="plat-logo">
-                  {p.logo === "youtube" ? "▶" : "♪"} {/* Fallback if icons are broken */}
+                  {p.logo === "youtube" ? "▶" : "♪"}
                 </div>
                 <div className="plat-name">{p.name}</div>
                 <div className="plat-sub">{p.sub}</div>
@@ -76,88 +82,163 @@ export default function MusicPage() {
             ))}
           </div>
 
-          {/* Featured Songs */}
-          <div className="eyebrow" style={{ color: "var(--teal-lt)" }}>
-            Featured Songs
-          </div>
-
-          <h2 className="sec-title lt" style={{ marginBottom: "2rem" }}>
-            Songs for Every Season of Faith
-          </h2>
-
-          <div className="songs-grid">
-            {SONGS.map((s) => (
-              <div key={s.title} className="song-card">
-                <div className="song-thumb" style={{ background: s.bg }}>
-                  {s.icon}
-                </div>
-                <div className="song-tag">{s.tag}</div>
-                <div className="song-title">{s.title}</div>
-                <div className="song-verse">{s.verse}</div>
-
-                <button
-                  style={{
-                    marginTop: "1.25rem",
-                    background: "var(--teal)",
-                    color: "white",
-                    border: "none",
-                    borderRadius: "24px",
-                    padding: ".5rem 1.25rem",
-                    fontSize: ".8rem",
-                    fontWeight: 600,
-                    cursor: "pointer",
-                    fontFamily: "var(--sans)",
-                  }}
-                >
-                  Listen ▶
-                </button>
+          {/* 2-Column Layout: Songs on Left, Slideshow on Right */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 450px), 1fr))",
+              gap: "4rem",
+              alignItems: "center",
+            }}
+          >
+            {/* LEFT COLUMN: Text & Songs */}
+            <div>
+              <div className="eyebrow" style={{ color: "var(--teal-lt)" }}>
+                Featured Songs
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+              <h2 className="sec-title lt" style={{ marginBottom: "2rem" }}>
+                Songs for Every Season of Faith
+              </h2>
 
-      {/* PREMIUM PHOTO GALLERY SLIDESHOW */}
-      <section style={{ background: "var(--navy)", padding: "4rem 0" }}>
-        <div className="inner" style={{ padding: "0 2rem", marginBottom: "1.5rem" }}>
-          <div className="eyebrow" style={{ color: "var(--teal-lt)" }}>Ministry in Motion</div>
-          <h2 className="sec-title lt" style={{ fontSize: "2rem", marginBottom: 0 }}>The Heart of Worship</h2>
-        </div>
-        
-        {/* Horizontal Scrolling Container */}
-        <div 
-          style={{ 
-            display: "flex", 
-            gap: "1.5rem", 
-            overflowX: "auto", 
-            padding: "0 2rem 2rem 2rem",
-            scrollSnapType: "x mandatory",
-            WebkitOverflowScrolling: "touch"
-          }}
-        >
-          {/* Gallery Images (Using Unsplash Placeholders) */}
-          {[
-            "https://images.unsplash.com/photo-1510915361894-faa8b413c125?auto=format&fit=crop&w=800&q=80", // Acoustic Guitar
-            "https://images.unsplash.com/photo-1438283173091-5dbf5c5a3206?auto=format&fit=crop&w=800&q=80", // Soundboard
-            "https://images.unsplash.com/photo-1453738773917-9c3eff1db985?auto=format&fit=crop&w=800&q=80", // Worship Hands
-            "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80"  // Studio Mic
-          ].map((src, index) => (
-            <img 
-              key={index}
-              src={src}
-              alt="Holy and Sweet Worship"
+              {/* Songs stacked vertically like a premium playlist */}
+              <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+                {SONGS.map((s) => (
+                  <div
+                    key={s.title}
+                    className="song-card"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "1.5rem",
+                      padding: "1.25rem",
+                    }}
+                  >
+                    <div
+                      className="song-thumb"
+                      style={{
+                        background: s.bg,
+                        width: "85px",
+                        height: "85px",
+                        flexShrink: 0,
+                        marginBottom: 0,
+                      }}
+                    >
+                      {s.icon}
+                    </div>
+                    <div>
+                      <div className="song-tag">{s.tag}</div>
+                      <div className="song-title" style={{ fontSize: "1.1rem", marginBottom: ".3rem" }}>
+                        {s.title}
+                      </div>
+                      <div className="song-verse" style={{ fontSize: ".82rem", marginBottom: ".85rem", color: "rgba(238,248,249,.5)" }}>
+                        {s.verse}
+                      </div>
+                      <button
+                        style={{
+                          background: "var(--teal)",
+                          color: "white",
+                          border: "none",
+                          borderRadius: "24px",
+                          padding: ".4rem 1.25rem",
+                          fontSize: ".75rem",
+                          fontWeight: 600,
+                          cursor: "pointer",
+                          fontFamily: "var(--sans)",
+                          textTransform: "uppercase",
+                          letterSpacing: ".05em"
+                        }}
+                      >
+                        Listen ▶
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RIGHT COLUMN: Premium Nature Slideshow */}
+            <div
               style={{
-                height: "350px",
-                width: "auto",
-                aspectRatio: "4/3",
-                objectFit: "cover",
-                borderRadius: "16px",
-                scrollSnapAlign: "center",
-                flexShrink: 0,
-                boxShadow: "0 12px 30px rgba(0,0,0,0.4)"
+                position: "relative",
+                width: "100%",
+                height: "600px",
+                borderRadius: "24px",
+                overflow: "hidden",
+                boxShadow: "0 25px 50px rgba(0,0,0,0.5)",
+                border: "1px solid rgba(255,255,255,0.05)"
               }}
-            />
-          ))}
+            >
+              <div
+                className="hide-scroll"
+                style={{
+                  display: "flex",
+                  width: "100%",
+                  height: "100%",
+                  overflowX: "auto",
+                  scrollSnapType: "x mandatory",
+                  WebkitOverflowScrolling: "touch",
+                }}
+              >
+                {[
+                  "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80", // Rolling Green Hills
+                  "https://images.unsplash.com/photo-1432405972618-c600f517ba68?auto=format&fit=crop&w=1000&q=80", // Waterfall
+                  "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80", // Calm Ocean Waves
+                  "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=80"  // Sun Rays in Forest
+                ].map((src, idx) => (
+                  <img
+                    key={idx}
+                    src={src}
+                    alt="Beautiful Nature Landscape"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      flexShrink: 0,
+                      scrollSnapAlign: "center",
+                    }}
+                  />
+                ))}
+              </div>
+
+              {/* Premium Dark Gradient Overlay at the bottom */}
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  height: "35%",
+                  background: "linear-gradient(to top, rgba(6,18,40,0.9) 0%, transparent 100%)",
+                  pointerEvents: "none",
+                }}
+              />
+
+              {/* Swipe Dots Indicator */}
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "2rem",
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                  display: "flex",
+                  gap: "0.6rem",
+                }}
+              >
+                {[0, 1, 2, 3].map((dot) => (
+                  <div
+                    key={dot}
+                    style={{
+                      width: "8px",
+                      height: "8px",
+                      borderRadius: "50%",
+                      background: dot === 0 ? "white" : "rgba(255,255,255,0.3)",
+                      boxShadow: "0 2px 4px rgba(0,0,0,0.5)"
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -204,4 +285,3 @@ export default function MusicPage() {
     </div>
   );
 }
-
