@@ -1,3 +1,10 @@
+import {
+  YouTubeLogo,
+  SpotifyLogo,
+  AppleMusicLogo,
+  AmazonMusicLogo
+} from "@/components/icons";
+
 export default function Footer() {
   return (
     <footer className="footer">
