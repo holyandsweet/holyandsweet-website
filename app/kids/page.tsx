@@ -1,6 +1,7 @@
 "use client";
-import { TownIcon } from "@/components/icons";
-import { KIDS_SERIES, VIDEOS_KIDS } from "@/lib/data";
+
+import { TownIcon, ButterflyIcon } from "@/components/icons";
+import { KIDS_SERIES } from "@/lib/data";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 
@@ -72,7 +73,7 @@ export default function KidsPage() {
             flexWrap: "wrap",
           }}
         >
-          <a href="https://www.youtube.com/@HolyandSweet" target="_blank">
+          <a href="https://www.youtube.com/@HolyandSweet" target="_blank" rel="noopener noreferrer">
             <button
               className="btn-kids"
               style={{
@@ -83,10 +84,6 @@ export default function KidsPage() {
             >
               ▶ Watch on YouTube
             </button>
-          </a>
-
-          <a href="/kids">
-            <button className="btn-o">Browse All Videos</button>
           </a>
         </div>
 
@@ -192,7 +189,7 @@ export default function KidsPage() {
                     marginBottom: "1rem",
                   }}
                 >
-                  {s.icon === "town" && <TownIcon />}
+                  {s.icon}
                 </div>
 
                 <div
@@ -234,48 +231,50 @@ export default function KidsPage() {
         </div>
       </section>
 
-      {/* VIDEOS */}
-      <section className="section" style={{ background: "var(--navy-dk)" }}>
-        <div className="inner">
-          <div className="eyebrow" style={{ color: "var(--teal-lt)" }}>
-            Featured Videos
+      {/* FEATURED VIDEO / WATCH & SUBSCRIBE SECTION */}
+      <section className="section" style={{ background: "var(--navy-dk)", textAlign: "center" }}>
+        <div className="inner" style={{ maxWidth: "800px", margin: "0 auto" }}>
+          <div className="eyebrow" style={{ color: "var(--teal-lt)" }}>Featured Video</div>
+          <h2 className="sec-title lt" style={{ marginBottom: "1rem" }}>Start Watching Today</h2>
+          <p style={{ color: "rgba(238,248,249,.7)", fontSize: "1.05rem", marginBottom: "3rem" }}>
+            Join us for joyful Bible stories and worship songs for the whole family.
+          </p>
+
+          {/* CMS-Ready Responsive Video Embed Container */}
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              paddingBottom: "56.25%", /* 16:9 Ratio */
+              borderRadius: "20px",
+              overflow: "hidden",
+              boxShadow: "0 20px 50px rgba(0,0,0,0.4)",
+              marginBottom: "3rem",
+              backgroundColor: "#061228", 
+            }}
+          >
+            <iframe
+              src="https://www.youtube.com/embed/jahrQIe2T2Y?si=rZVfWtRsChOhY7Z0"
+              title="Holy and Sweet Kids Featured Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                border: "none",
+              }}
+            />
           </div>
 
-          <h2 className="sec-title lt" style={{ marginBottom: "2.5rem" }}>
-            Start Watching Today
-          </h2>
-
-          <div className="vid-grid">
-            {VIDEOS_KIDS.map((v) => (
-              <div
-                key={v.title}
-                style={{
-                  borderRadius: "18px",
-                  overflow: "hidden",
-                  boxShadow: "0 10px 35px rgba(0,0,0,0.35)",
-                  transition: "all 0.25s ease",
-                  background: "rgba(255,255,255,0.03)",
-                  cursor: "pointer",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateY(-5px)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                }}
-              >
-                <div className="vid-thumb" style={{ background: v.bg }}>
-                  {v.icon}
-                  <div className="play-btn">▶</div>
-                </div>
-
-                <div className="vid-info">
-                  <div className="vid-series">{v.series}</div>
-                  <div className="vid-title">{v.title}</div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <a href="https://www.youtube.com/@HolyandSweet?sub_confirmation=1" target="_blank" rel="noopener noreferrer">
+            <button className="btn-kids" style={{ padding: "1rem 2.5rem", fontSize: ".95rem", boxShadow: "0 8px 24px rgba(56,212,224,0.3)" }}>
+              Subscribe to Kids Channel
+            </button>
+          </a>
         </div>
       </section>
 
