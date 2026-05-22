@@ -64,6 +64,24 @@ export default function KidsPage() {
             <button className="btn-o">Browse All Videos</button>
           </a>
         </div>
+        
+<div
+  style={{
+    marginTop: "2rem",
+    display: "flex",
+    justifyContent: "center",
+    gap: "1.5rem",
+    flexWrap: "wrap",
+    opacity: 0.8,
+    fontSize: ".85rem",
+    color: "rgba(255,255,255,0.8)",
+  }}
+>
+  <span>🎬 Animated Series</span>
+  <span>📖 Bible Stories</span>
+  <span>🎵 Worship for Kids</span>
+</div>
+
       </div>
 
       <section className="section kids-sec" style={{ padding: "5rem 2rem" }}>
@@ -76,10 +94,42 @@ export default function KidsPage() {
             Stories That Shape Little Hearts
           </h2>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "1.25rem" }}>
-            {KIDS_SERIES.map((s) => (
-              <div key={s.name} className="series-card" style={{ background: s.bg }}>
-                <div className="series-icon">{s.icon === "town" && <TownIcon />}</div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+gap: "1.5rem",
+ }}>
+            {KIDS_SERIES.map((s) => ( <div
+  key={s.name}
+  className="series-card"
+  style={{
+    background: s.bg,
+    borderRadius: "20px",
+    padding: "2rem",
+    boxShadow: "0 12px 40px rgba(0,0,0,0.25)",
+    transition: "all 0.3s ease",
+    cursor: "pointer",
+  }}
+onMouseEnter={(e) => {
+    e.currentTarget.style.transform = "translateY(-6px) scale(1.02)";
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.transform = "translateY(0)";
+  }}
+>
+ <div
+  className="series-icon"
+  style={{
+    width: 70,
+    height: 70,
+    borderRadius: "18px",
+    background: "rgba(255,255,255,0.1)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: "1rem",
+  }}
+>
+  {s.icon === "town" && <TownIcon />}
+</div>
 
                 <div
                   style={{
@@ -128,7 +178,18 @@ export default function KidsPage() {
 
           <div className="vid-grid">
             {VIDEOS_KIDS.map((v) => (
-              <div key={v.title} className="vid-card">
+              
+<div
+  key={v.title}
+  className="vid-card"
+  style={{
+    borderRadius: "18px",
+    overflow: "hidden",
+    boxShadow: "0 10px 35px rgba(0,0,0,0.25)",
+    transition: "all 0.25s ease",
+  }}
+>
+
                 <div className="vid-thumb" style={{ background: v.bg }}>
                   {v.icon}
                   <div className="play-btn">▶</div>
