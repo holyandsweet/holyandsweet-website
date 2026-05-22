@@ -1,3 +1,11 @@
+import { 
+  YouTubeLogo, SpotifyLogo, AppleMusicLogo, AmazonMusicLogo, 
+  DoveIcon, PrayHandsIcon, SunIcon, SailboatIcon, LeafBranchIcon, LightRaysIcon,
+  TownIcon, ButterflyIcon, BuilderIcon, MusicNoteIcon, BooksStackIcon, OpenBibleIcon,
+  TShirtIcon, MugIcon, JournalIcon, HoodieIcon, WallArtIcon, CalendarIcon, GiftBoxIcon, NotebookIcon,
+  ColoringBookIcon, StorybookIcon, FlashcardsIcon, StickerIcon, PlushIcon
+} from "@/components/icons";
+
 export const KIDS_SERIES = [
   {
     icon: "town",
