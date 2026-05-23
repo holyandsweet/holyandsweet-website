@@ -1,4 +1,4 @@
-import NewsletterForm from "@/components/NewsletterForm";
+import NewsletterForm from "@/components/NewsLetterForm";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { client } from "@/sanity/lib/client"; 
