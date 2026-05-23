@@ -1,38 +1,47 @@
 import NewsletterForm from "@/components/NewsLetterForm";
+import HeroCarousel from "@/components/HeroCarousel";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { client } from "@/sanity/lib/client"; 
 import { urlFor } from "@/sanity/lib/image"; 
 
-const GET_KIDS_SERIES_QUERY = `*[_type == "kidsSeries"] {
-  _id,
-  title,
-  tag,
-  description,
-  bgColor,
-  image
+// Querying both datasets simultaneously
+const HOME_DATA_QUERY = `{
+  "kidsSeries": *[_type == "kidsSeries"] {
+    _id,
+    title,
+    tag,
+    description,
+    bgColor,
+    image
+  },
+  "heroSlides": *[_type == "heroSlide"] | order(order asc) {
+    _id,
+    title,
+    image
+  }
 }`;
 
 export default async function HomePage() {
-  const kidsSeries = await client.fetch(GET_KIDS_SERIES_QUERY);
+  const { kidsSeries, heroSlides } = await client.fetch(HOME_DATA_QUERY);
 
   return (
     <div className="site" style={{ backgroundColor: "#ffffff", color: "var(--navy)" }}>
       <NavBar />
 
       {/* --- PREMIUM HERO SECTION --- */}
-      <section style={{ padding: "8rem 2rem 6rem", maxWidth: "1200px", margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "4rem", alignItems: "center" }}>
+      <section style={{ padding: "6rem 2rem 5rem", maxWidth: "1300px", margin: "0 auto" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "3rem", alignItems: "center" }}>
           
-          {/* Hero Text */}
+          {/* Hero Story Telling Component */}
           <div style={{ textAlign: "left" }}>
             <span style={{ textTransform: "uppercase", letterSpacing: "2px", fontSize: "0.85rem", color: "var(--teal)", fontWeight: "bold", display: "block", marginBottom: "1rem" }}>
               Now Streaming
             </span>
-            <h1 style={{ fontFamily: "var(--serif)", fontSize: "clamp(2.8rem, 5vw, 4.5rem)", color: "var(--navy)", lineHeight: "1.1", marginBottom: "1.5rem" }}>
+            <h1 style={{ fontFamily: "var(--serif)", fontSize: "clamp(2.8rem, 4.5vw, 4.2rem)", color: "var(--navy)", lineHeight: "1.15", marginBottom: "1.5rem" }}>
               Wholesome media for your little lights.
             </h1>
-            <p style={{ color: "var(--txt-muted)", fontSize: "1.15rem", lineHeight: "1.6", marginBottom: "2.5rem", maxWidth: "520px" }}>
+            <p style={{ color: "var(--txt-muted)", fontSize: "1.1rem", lineHeight: "1.6", marginBottom: "2.5rem", maxWidth: "520px" }}>
               Premium Christian lifestyle media, engaging animated series, and curated merchandise crafted deliberately for the modern faithful family.
             </p>
             <div style={{ display: "flex", gap: "1rem" }}>
@@ -41,16 +50,9 @@ export default async function HomePage() {
             </div>
           </div>
 
-          {/* Hero Visual Showcase */}
-          <div style={{ position: "relative", display: "flex", justifyContent: "center" }}>
-            <div style={{ width: "100%", maxWidth: "450px", height: "500px", borderRadius: "24px", background: "linear-gradient(135deg, var(--ice) 0%, #e2f1f2 100%)", position: "relative", overflow: "hidden", boxShadow: "0 20px 40px rgba(0,0,0,0.04)" }}>
-              {/* Optional: If you want a placeholder high-res hero image, or display a featured item here */}
-              <div style={{ position: "absolute", inset: "0", display: "flex", alignItems: "center", justifyContent: "center", padding: "2rem", textAlign: "center" }}>
-                <span style={{ fontFamily: "var(--serif)", fontSize: "1.5rem", opacity: 0.3 }}>Holy & Sweet Family</span>
-              </div>
-            </div>
-            {/* Elegant decorative background shape */}
-            <div style={{ position: "absolute", zIndex: -1, bottom: "-20px", left: "-20px", width: "200px", height: "200px", background: "var(--teal-pale)", borderRadius: "50%", filter: "blur(40px)", opacity: 0.6 }}></div>
+          {/* New Dynamic Interactive Carousel replaces the old placeholder block */}
+          <div>
+            <HeroCarousel slides={heroSlides} />
           </div>
 
         </div>
@@ -60,7 +62,6 @@ export default async function HomePage() {
       <section className="section" style={{ background: "var(--ice)", padding: "6rem 2rem" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           
-          {/* Section Header */}
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "3.5rem", borderBottom: "1px solid rgba(0,0,0,0.06)", paddingBottom: "1.5rem" }}>
             <div>
               <span style={{ textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.8rem", color: "var(--txt-muted)", display: "block", marginBottom: "0.5rem" }}>
@@ -73,23 +74,20 @@ export default async function HomePage() {
             <span style={{ color: "var(--teal)", fontWeight: "600", fontSize: "0.95rem", cursor: "pointer" }}>View All Series →</span>
           </div>
           
-          {/* Dynamic Grid Layout */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "2.5rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "2.5rem" }}>
             {kidsSeries.map((series: any) => (
-              <div key={series._id} style={{ backgroundColor: "#ffffff", borderRadius: "16px", overflow: "hidden", display: "flex", flexDirection: "column", boxShadow: "0 4px 20px rgba(0,0,0,0.02)", border: "1px solid rgba(0,0,0,0.04)", transition: "transform 0.2s ease" }}>
+              <div key={series._id} style={{ backgroundColor: "#ffffff", borderRadius: "16px", overflow: "hidden", display: "flex", flexDirection: "column", boxShadow: "0 4px 20px rgba(0,0,0,0.02)", border: "1px solid rgba(0,0,0,0.04)" }}>
                 
-                {/* Visual Container */}
-                <div style={{ background: series.bgColor || "var(--teal)", position: "relative", paddingTop: "65%", overflow: "hidden" }}>
+                <div style={{ background: series.bgColor || "var(--teal)", position: "relative", paddingTop: "60%", overflow: "hidden" }}>
                   {series.image && (
                     <img 
                       src={urlFor(series.image).width(500).url()} 
                       alt={series.title} 
-                      style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", inset: 0, padding: "0" }}
+                      style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", inset: 0 }}
                     />
                   )}
                 </div>
 
-                {/* Content Details */}
                 <div style={{ padding: "2rem", display: "flex", flexDirection: "column", flexGrow: 1 }}>
                   <div style={{ textTransform: "uppercase", letterSpacing: "1px", fontSize: "0.75rem", color: "var(--teal)", fontWeight: "bold" }}>
                     {series.tag || "Original"}
@@ -101,7 +99,6 @@ export default async function HomePage() {
                     {series.description}
                   </p>
                   
-                  {/* Anchored Action Button */}
                   <div style={{ marginTop: "auto" }}>
                     <button className="btn-s" style={{ width: "100%", padding: "0.8rem", borderRadius: "8px", background: "transparent", border: "1px solid var(--navy)", color: "var(--navy)", fontWeight: "600" }}>
                       Watch Now
