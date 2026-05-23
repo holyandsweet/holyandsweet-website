@@ -4,7 +4,6 @@ import Footer from "@/components/Footer";
 import { client } from "@/sanity/lib/client"; 
 import { urlFor } from "@/sanity/lib/image"; 
 
-// 1. The GROQ query asking Sanity for your Kids Series
 const GET_KIDS_SERIES_QUERY = `*[_type == "kidsSeries"] {
   _id,
   title,
@@ -14,61 +13,119 @@ const GET_KIDS_SERIES_QUERY = `*[_type == "kidsSeries"] {
   image
 }`;
 
-// 2. The page is 'async' so it can fetch from the database
 export default async function HomePage() {
-  // Fetching the data from Sanity
   const kidsSeries = await client.fetch(GET_KIDS_SERIES_QUERY);
 
   return (
-    <div className="site">
+    <div className="site" style={{ backgroundColor: "#ffffff", color: "var(--navy)" }}>
       <NavBar />
 
-      <div className="pg-hero" style={{ textAlign: "center", padding: "6rem 1rem 4rem" }}>
-        <h1 style={{ fontFamily: "var(--serif)", fontSize: "clamp(2.5rem,5vw,4rem)", color: "var(--navy)" }}>
-          Welcome to Holy & Sweet
-        </h1>
-        <p style={{ color: "var(--txt-muted)", maxWidth: "600px", margin: "1rem auto 0" }}>
-          Premium Christian lifestyle media and merchandise for the whole family.
-        </p>
-      </div>
-
-      <section className="section" style={{ background: "var(--ice)", padding: "4rem 1rem" }}>
-        <div className="inner">
-          <h2 style={{ fontFamily: "var(--serif)", fontSize: "2rem", color: "var(--navy)", marginBottom: "2rem", textAlign: "center" }}>
-            Kids Series
-          </h2>
+      {/* --- PREMIUM HERO SECTION --- */}
+      <section style={{ padding: "8rem 2rem 6rem", maxWidth: "1200px", margin: "0 auto" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "4rem", alignItems: "center" }}>
           
-          {/* 3. Mapping over the Sanity Data */}
-          <div className="merch-grid">
-            {kidsSeries.map((series: any) => (
-              <div key={series._id} className="prod-card">
-                <div className="prod-img" style={{ background: series.bgColor || "var(--teal)", position: "relative", minHeight: "200px" }}>
-                  {series.image && (
-                    <img 
-                      src={urlFor(series.image).width(400).url()} 
-                      alt={series.title} 
-                      style={{ width: "100%", height: "100%", objectFit: "contain", position: "absolute", inset: 0, padding: "1rem" }}
-                    />
-                  )}
-                </div>
-                <div className="prod-info">
-                  <div className="prod-tag">{series.tag}</div>
-                  <h3 style={{ fontFamily: "var(--serif)", fontSize: "1.2rem", marginTop: "0.5rem" }}>{series.title}</h3>
-                  <p style={{ fontSize: "0.9rem", color: "var(--txt-muted)", margin: "0.5rem 0 1rem" }}>{series.description}</p>
-                  <button className="btn-s" style={{ width: "100%" }}>Watch Now</button>
-                </div>
-              </div>
-            ))}
+          {/* Hero Text */}
+          <div style={{ textAlign: "left" }}>
+            <span style={{ textTransform: "uppercase", letterSpacing: "2px", fontSize: "0.85rem", color: "var(--teal)", fontWeight: "bold", display: "block", marginBottom: "1rem" }}>
+              Now Streaming
+            </span>
+            <h1 style={{ fontFamily: "var(--serif)", fontSize: "clamp(2.8rem, 5vw, 4.5rem)", color: "var(--navy)", lineHeight: "1.1", marginBottom: "1.5rem" }}>
+              Wholesome media for your little lights.
+            </h1>
+            <p style={{ color: "var(--txt-muted)", fontSize: "1.15rem", lineHeight: "1.6", marginBottom: "2.5rem", maxWidth: "520px" }}>
+              Premium Christian lifestyle media, engaging animated series, and curated merchandise crafted deliberately for the modern faithful family.
+            </p>
+            <div style={{ display: "flex", gap: "1rem" }}>
+              <button className="btn-p" style={{ padding: "1rem 2.5rem" }}>Explore Series</button>
+              <button className="btn-s" style={{ padding: "1rem 2rem", background: "transparent", border: "1px solid var(--navy)" }}>Our Mission</button>
+            </div>
           </div>
+
+          {/* Hero Visual Showcase */}
+          <div style={{ position: "relative", display: "flex", justifyContent: "center" }}>
+            <div style={{ width: "100%", maxWidth: "450px", height: "500px", borderRadius: "24px", background: "linear-gradient(135deg, var(--ice) 0%, #e2f1f2 100%)", position: "relative", overflow: "hidden", boxShadow: "0 20px 40px rgba(0,0,0,0.04)" }}>
+              {/* Optional: If you want a placeholder high-res hero image, or display a featured item here */}
+              <div style={{ position: "absolute", inset: "0", display: "flex", alignItems: "center", justifyContent: "center", padding: "2rem", textAlign: "center" }}>
+                <span style={{ fontFamily: "var(--serif)", fontSize: "1.5rem", opacity: 0.3 }}>Holy & Sweet Family</span>
+              </div>
+            </div>
+            {/* Elegant decorative background shape */}
+            <div style={{ position: "absolute", zIndex: -1, bottom: "-20px", left: "-20px", width: "200px", height: "200px", background: "var(--teal-pale)", borderRadius: "50%", filter: "blur(40px)", opacity: 0.6 }}></div>
+          </div>
+
         </div>
       </section>
 
-      <section className="section" style={{ padding: "4rem 1rem", textAlign: "center" }}>
-        <div className="inner" style={{ maxWidth: "600px", margin: "0 auto" }}>
-          <h2 style={{ fontFamily: "var(--serif)", fontSize: "2rem", color: "var(--navy)", marginBottom: "1rem" }}>Stay in the Loop</h2>
-          <p style={{ color: "var(--txt-muted)", marginBottom: "2rem" }}>Subscribe to our newsletter for updates on new series, merch, and more.</p>
+      {/* --- CURATED KIDS SERIES SECTION --- */}
+      <section className="section" style={{ background: "var(--ice)", padding: "6rem 2rem" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           
-          {/* 4. Your Formspree Newsletter Component */}
+          {/* Section Header */}
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "3.5rem", borderBottom: "1px solid rgba(0,0,0,0.06)", paddingBottom: "1.5rem" }}>
+            <div>
+              <span style={{ textTransform: "uppercase", letterSpacing: "1.5px", fontSize: "0.8rem", color: "var(--txt-muted)", display: "block", marginBottom: "0.5rem" }}>
+                Original Productions
+              </span>
+              <h2 style={{ fontFamily: "var(--serif)", fontSize: "2.5rem", color: "var(--navy)", margin: 0 }}>
+                Kids Series
+              </h2>
+            </div>
+            <span style={{ color: "var(--teal)", fontWeight: "600", fontSize: "0.95rem", cursor: "pointer" }}>View All Series →</span>
+          </div>
+          
+          {/* Dynamic Grid Layout */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "2.5rem" }}>
+            {kidsSeries.map((series: any) => (
+              <div key={series._id} style={{ backgroundColor: "#ffffff", borderRadius: "16px", overflow: "hidden", display: "flex", flexDirection: "column", boxShadow: "0 4px 20px rgba(0,0,0,0.02)", border: "1px solid rgba(0,0,0,0.04)", transition: "transform 0.2s ease" }}>
+                
+                {/* Visual Container */}
+                <div style={{ background: series.bgColor || "var(--teal)", position: "relative", paddingTop: "65%", overflow: "hidden" }}>
+                  {series.image && (
+                    <img 
+                      src={urlFor(series.image).width(500).url()} 
+                      alt={series.title} 
+                      style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", inset: 0, padding: "0" }}
+                    />
+                  )}
+                </div>
+
+                {/* Content Details */}
+                <div style={{ padding: "2rem", display: "flex", flexDirection: "column", flexGrow: 1 }}>
+                  <div style={{ textTransform: "uppercase", letterSpacing: "1px", fontSize: "0.75rem", color: "var(--teal)", fontWeight: "bold" }}>
+                    {series.tag || "Original"}
+                  </div>
+                  <h3 style={{ fontFamily: "var(--serif)", fontSize: "1.4rem", margin: "0.6rem 0", color: "var(--navy)" }}>
+                    {series.title}
+                  </h3>
+                  <p style={{ fontSize: "0.95rem", color: "var(--txt-muted)", margin: "0 0 2rem", lineHeight: "1.6" }}>
+                    {series.description}
+                  </p>
+                  
+                  {/* Anchored Action Button */}
+                  <div style={{ marginTop: "auto" }}>
+                    <button className="btn-s" style={{ width: "100%", padding: "0.8rem", borderRadius: "8px", background: "transparent", border: "1px solid var(--navy)", color: "var(--navy)", fontWeight: "600" }}>
+                      Watch Now
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* --- NEWSLETTER EXPERIENCE --- */}
+      <section style={{ padding: "7rem 2rem", backgroundColor: "#ffffff", textAlign: "center" }}>
+        <div style={{ maxWidth: "550px", margin: "0 auto", padding: "3rem 2rem", borderRadius: "24px", background: "linear-gradient(to bottom, #ffffff, var(--ice))", border: "1px solid rgba(56, 212, 224, 0.15)" }}>
+          <h2 style={{ fontFamily: "var(--serif)", fontSize: "2.2rem", color: "var(--navy)", marginBottom: "0.75rem" }}>
+            Join the Family Circle
+          </h2>
+          <p style={{ color: "var(--txt-muted)", marginBottom: "2.5rem", fontSize: "1rem", lineHeight: "1.5" }}>
+            Subscribe to receive exclusive drops, early access to new series releases, and community updates.
+          </p>
+          
           <NewsletterForm />
         </div>
       </section>
